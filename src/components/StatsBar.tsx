@@ -53,9 +53,9 @@ export default function StatsBar() {
       <div className="stat-item">
         <div className="stat-stars-row">
           {[1,2,3,4].map(i => (
-            <svg key={i} width="22" height="22" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg key={i} width="28" height="28" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           ))}
-          <svg width="22" height="22" viewBox="0 0 24 24">
+          <svg width="28" height="28" viewBox="0 0 24 24">
             <defs>
               <linearGradient id="half">
                 <stop offset="50%" stopColor="#FBBF24"/>
