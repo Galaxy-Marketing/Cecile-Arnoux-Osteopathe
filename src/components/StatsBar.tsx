@@ -51,10 +51,21 @@ export default function StatsBar() {
       </div>
       <div className="stat-divider" />
       <div className="stat-item">
-        <div className="stat-number stars">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          4,5
+        <div className="stat-stars-row">
+          {[1,2,3,4].map(i => (
+            <svg key={i} width="22" height="22" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          ))}
+          <svg width="22" height="22" viewBox="0 0 24 24" style={{position:'relative'}}>
+            <defs>
+              <linearGradient id="half">
+                <stop offset="50%" stopColor="#FBBF24"/>
+                <stop offset="50%" stopColor="rgba(255,255,255,0.25)"/>
+              </linearGradient>
+            </defs>
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#half)"/>
+          </svg>
         </div>
+        <div className="stat-number" style={{fontSize:'28px',marginTop:'4px'}}>4,5</div>
         <div className="stat-label">
           <svg width="14" height="14" viewBox="0 0 24 24" aria-label="Google" style={{marginRight:'4px',verticalAlign:'middle'}}>
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -67,15 +78,19 @@ export default function StatsBar() {
       </div>
       <style>{`
         .stats-bar {
-          background: var(--sage-dark); padding: 36px 60px;
+          background: var(--sage-dark); padding: 48px 80px;
           display: flex; justify-content: center; align-items: center; gap: 0;
         }
-        .stat-item { text-align: center; flex: 1; max-width: 200px; }
+        .stat-item { text-align: center; flex: 1; max-width: 260px; }
         .stat-number {
           font-family: 'Playfair Display', serif;
-          font-size: 36px; font-weight: 700; color: white;
-          line-height: 1; margin-bottom: 6px;
+          font-size: 42px; font-weight: 700; color: white;
+          line-height: 1; margin-bottom: 8px;
           display: flex; align-items: center; justify-content: center; gap: 4px;
+        }
+        .stat-stars-row {
+          display: flex; align-items: center; justify-content: center; gap: 2px;
+          margin-bottom: 4px;
         }
         .stat-label {
           font-size: 12px; color: rgba(255,255,255,0.6);
@@ -83,17 +98,16 @@ export default function StatsBar() {
           display: flex; align-items: center; justify-content: center;
         }
         .stat-divider {
-          width: 1px; height: 48px;
-          background: rgba(255,255,255,0.15); margin: 0 20px; flex-shrink: 0;
+          width: 1px; height: 56px;
+          background: rgba(255,255,255,0.15); margin: 0 40px; flex-shrink: 0;
         }
         @media (max-width: 900px) {
           .stats-bar { padding: 28px 20px; gap: 0; flex-wrap: wrap; }
           .stat-item { min-width: 45%; margin-bottom: 24px; }
-          .stat-divider:nth-child(4) { display: none; }
           .stat-divider { display: none; }
         }
         @media (max-width: 480px) {
-          .stat-number { font-size: 28px; }
+          .stat-number { font-size: 30px; }
           .stat-item { min-width: 48%; }
         }
       `}</style>
