@@ -1,0 +1,70 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  ogImage = '/og-default.jpg',
+} = Astro.props;
+
+const schemaOrg = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalBusiness',
+  name: 'Cécile Arnoux — Ostéopathe',
+  description: 'Ostéopathe et étiopathe à Vendôme (41100). Douleurs du dos, nourrissons, grossesse, sport.',
+  url: 'https://cecile-arnoux-osteopathe.vercel.app',
+  telephone: '+33254670326',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '1 rue des États-Unis d\'Amérique',
+    addressLocality: 'Vendôme',
+    postalCode: '41100',
+    addressCountry: 'FR',
+  },
+  openingHours: ['Mo-Fr 08:00-19:00', 'Sa 08:00-12:00'],
+  priceRange: '€',
+  medicalSpecialty: 'Osteopathic',
+};
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Cécile Arnoux Ostéopathe" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <slot />
+</body>
+</html>

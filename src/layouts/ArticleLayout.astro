@@ -1,0 +1,133 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
+import Nav from '../components/Nav';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  tag: string;
+  h1: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  breadcrumb: string;
+  ctaTitle: string;
+  ctaDesc: string;
+  backLabel?: string;
+  backHref?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  tag,
+  h1,
+  image,
+  imageAlt,
+  breadcrumb,
+  ctaTitle,
+  ctaDesc,
+  backLabel = 'Retour au blog',
+  backHref = '/blog/',
+} = Astro.props;
+---
+
+<BaseLayout {title} {description} {canonical}>
+  <Nav client:load />
+
+  <article>
+    <div class="breadcrumb">
+      <a href="/">Accueil</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; {breadcrumb}
+    </div>
+    <span class="article-tag">{tag}</span>
+    <h1>{h1}</h1>
+    <div class="article-meta">Par Cécile Arnoux, ostéopathe D.O. — Vendôme (41100)</div>
+    <Image src={image} alt={imageAlt} class="article-img" width={1200} height={600} loading="eager" />
+    <slot />
+    <div class="cta-box">
+      <h3>{ctaTitle}</h3>
+      <p>{ctaDesc}</p>
+      <a href="tel:0254670326" class="cta-btn">02 54 67 03 26</a>
+    </div>
+  </article>
+
+  <footer class="footer-simple">
+    <div class="footer-brand-name" style="font-size:18px;">Cécile Arnoux — Ostéopathe D.O.</div>
+    <a href={backHref} class="footer-back">{backLabel}</a>
+  </footer>
+</BaseLayout>
+
+<style>
+  article {
+    max-width: 760px; margin: 0 auto; padding: 120px 40px 80px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--text-light); margin-bottom: 20px;
+  }
+  .breadcrumb a { color: var(--sage-dark); text-decoration: none; }
+  .article-tag {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--sage-dark);
+    background: rgba(122,158,126,0.12); padding: 5px 14px;
+    border-radius: 20px; display: inline-block; margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4.5vw, 48px); line-height: 1.15;
+    color: var(--text-dark); margin-bottom: 20px;
+  }
+  .article-meta {
+    font-size: 13px; color: var(--text-light);
+    margin-bottom: 36px; padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-img {
+    width: 100%; height: auto; border-radius: 16px;
+    display: block; margin-bottom: 44px;
+    aspect-ratio: 2/1; object-fit: cover;
+  }
+  :global(h2) {
+    font-family: 'Playfair Display', serif; font-size: 26px;
+    color: var(--text-dark); margin: 44px 0 16px; line-height: 1.2;
+  }
+  :global(p) {
+    font-size: 16px; color: var(--text-mid); line-height: 1.9; margin-bottom: 20px;
+  }
+  :global(ul), :global(ol) { padding-left: 22px; margin-bottom: 20px; }
+  :global(li) {
+    font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 6px;
+  }
+  :global(.highlight) {
+    background: var(--cream); border-left: 3px solid var(--sage);
+    padding: 20px 24px; border-radius: 0 12px 12px 0;
+    margin: 32px 0; font-size: 15px; color: var(--text-mid); line-height: 1.8;
+  }
+  :global(.warning) {
+    background: #fff8f0; border-left: 3px solid #e8a87c;
+    padding: 20px 24px; border-radius: 0 12px 12px 0;
+    margin: 32px 0; font-size: 15px; color: var(--text-mid); line-height: 1.8;
+  }
+  .cta-box {
+    background: var(--sage-dark); color: white;
+    padding: 36px 40px; border-radius: 20px; margin-top: 50px; text-align: center;
+  }
+  .cta-box h3 {
+    font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 10px;
+  }
+  .cta-box p {
+    color: rgba(255,255,255,0.8); font-size: 15px; margin-bottom: 24px;
+  }
+  .cta-btn {
+    background: white; color: var(--sage-dark);
+    padding: 14px 32px; border-radius: 50px; font-size: 15px;
+    font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s;
+  }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+
+  @media (max-width: 600px) {
+    article { padding: 100px 20px 60px; }
+    .cta-box { padding: 28px 20px; }
+  }
+</style>
