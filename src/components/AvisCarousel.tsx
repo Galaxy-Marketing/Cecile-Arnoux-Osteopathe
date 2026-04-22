@@ -1,14 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 const avis = [
-  { name: "Sophie M.", stars: 5, text: "Cécile est une ostéopathe exceptionnelle. Elle a soulagé mes douleurs lombaires en deux séances là où d\u2019autres avaient échoué pendant des mois. Je recommande vivement." },
-  { name: "Thomas B.", stars: 5, text: "Prise en charge rapide et très professionnelle. Mon bébé souffrait de coliques depuis la naissance — après une séance, le changement a été spectaculaire. Merci infiniment !" },
-  { name: "Marie-Claire D.", stars: 5, text: "Consultation très complète. Cécile prend le temps d\u2019écouter et d\u2019expliquer chaque geste. Ma sciatique a considérablement diminué dès la première séance." },
-  { name: "Laurent P.", stars: 5, text: "Sportif de haut niveau, je vois Cécile en préventif chaque saison. Grâce à elle, je n\u2019ai pas eu de blessure sérieuse depuis deux ans. Indispensable." },
-  { name: "Nathalie R.", stars: 5, text: "Ostéopathe sérieuse et bienveillante. Elle a pris en charge mes douleurs pendant la grossesse avec des techniques très douces et rassurantes." },
-  { name: "Alexandre V.", stars: 5, text: "Cabinet propre et agréable, rendez-vous facile à obtenir. Cécile a réglé mon lumbago en une séance. Je la recommande sans hésiter à tout mon entourage." },
-  { name: "Isabelle F.", stars: 5, text: "J\u2019ai consulté pour des migraines chroniques. Après trois séances, leur fréquence a nettement diminué. Je n\u2019aurais pas cru que l\u2019ostéopathie puisse autant aider." },
-  { name: "Nicolas G.", stars: 5, text: "Très bonne expérience. Cécile est à l\u2019écoute, précise dans son diagnostic et ses explications sont claires. Mes cervicales ne m\u2019ont plus autant gêné depuis." },
+  { name: "Mika Do", stars: 5, text: "Suite a des probl\u00e8me digestif j\u2019ai \u00e9t\u00e9 voir cette \u00e9thiopathe et depuis c\u2019est redevenu comme avant ..merci \u00e0 vous \ud83d\ude0a\ud83d\ude0a\ud83d\ude0a" },
+  { name: "Marie France Leproust", stars: 5, text: "Tr\u00e8s bon ost\u00e9opathe \u00e9thiopathe \u00e0 l\u2019\u00e9coute de ses patients. Salle d\u2019attente reposante, musique relaxante." },
+  { name: "Cyril Brosse", stars: 5, text: "En ce qui me concerne 1 s\u00e9ance pour un mal de dos qui me tenait depuis 1 mois." },
 ];
 
 function Stars({ n }: { n: number }) {
@@ -39,7 +34,7 @@ export default function AvisCarousel() {
     if (!track) return;
     let raf: number;
     let pos = 0;
-    const speed = 0.5;
+    const speed = 0.3;
     const step = () => {
       pos -= speed;
       const half = track.scrollWidth / 2;
