@@ -46,17 +46,17 @@ export default function AvisCarousel() {
     return () => cancelAnimationFrame(raf);
   }, []);
 
-  const doubled = [...avis, ...avis];
+  const repeated = [...avis, ...avis, ...avis, ...avis, ...avis, ...avis];
 
   return (
     <div className="avis-outer">
       {/* Desktop carousel */}
       <div className="avis-track-wrap desktop-only">
         <div ref={trackRef} className="avis-track">
-          {doubled.map((a, i) => (
+          {repeated.map((a, i) => (
             <div key={i} className="avis-card">
               <Stars n={a.stars} />
-              <p className="avis-text">"{a.text}"</p>
+              <p className="avis-text">{a.text}</p>
               <div className="avis-name">{a.name}</div>
             </div>
           ))}
@@ -69,7 +69,7 @@ export default function AvisCarousel() {
           {avis.map((a, i) => (
             <div key={i} className="avis-card mobile-card">
               <Stars n={a.stars} />
-              <p className="avis-text">"{a.text}"</p>
+              <p className="avis-text">{a.text}</p>
               <div className="avis-name">{a.name}</div>
             </div>
           ))}
@@ -100,11 +100,11 @@ export default function AvisCarousel() {
         .avis-card {
           background: var(--warm-white); border: 1px solid var(--border);
           border-radius: 16px; padding: 28px;
-          width: 300px; flex-shrink: 0;
+          width: 420px; flex-shrink: 0;
         }
         .avis-text {
           font-size: 14px; color: var(--text-mid); line-height: 1.7;
-          margin: 12px 0 16px; font-style: italic;
+          margin: 12px 0 16px; font-style: normal;
         }
         .avis-name { font-size: 13px; font-weight: 600; color: var(--sage-dark); }
         .desktop-only { display: block; }
