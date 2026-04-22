@@ -100,12 +100,12 @@ export default function Nav({ activePage }: NavProps) {
           font-size: 17px; color: var(--text-dark); text-decoration: none;
         }
         .mobile-cta {
-          margin-top: 8px; background: var(--sage) !important;
-          color: white !important; text-align: center;
-          border-radius: 50px; padding: 14px 24px !important;
+          margin-top: 8px; background: var(--sage);
+          color: white; text-align: center;
+          border-radius: 50px; padding: 14px 24px;
         }
         @media (max-width: 900px) {
-          .nav-links { display: none !important; }
+          .nav-links { display: none; }
           .hamburger { display: flex; }
           .mobile-menu { display: block; }
         }

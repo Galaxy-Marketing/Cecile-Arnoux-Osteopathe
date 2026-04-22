@@ -26,7 +26,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   <Nav client:load />
 
   <!-- HERO -->
-  <section id="hero">
+  <section id="hero" aria-label="Présentation du cabinet">
     <div class="hero-bg">
       <Image src={heroImg} alt="Cabinet ostéopathie Vendôme" width={1920} height={1080} loading="eager" class="hero-img" />
     </div>
@@ -81,7 +81,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   </section>
 
   <!-- CONSULTATIONS -->
-  <section id="consultations">
+  <section id="consultations" aria-label="Consultations">
     <div class="reveal" style="text-align:center">
       <div class="section-label">Consultations</div>
       <h2 class="section-title">Une prise en charge<br><em>complète et personnalisée</em></h2>
@@ -182,7 +182,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   </section>
 
   <!-- FAQ -->
-  <section id="faq">
+  <section id="faq" aria-label="Questions fréquentes">
     <div class="reveal" style="text-align:center;margin-bottom:56px">
       <div class="section-label">Questions fréquentes</div>
       <h2 class="section-title">Ce que vous <em>vous demandez</em></h2>
@@ -195,7 +195,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   </section>
 
   <!-- AVIS -->
-  <section id="avis">
+  <section id="avis" aria-label="Témoignages patients">
     <div class="avis-header">
       <div class="reveal">
         <div class="section-label">Témoignages</div>
@@ -340,7 +340,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Cécile Arnoux — Ostéopathe D.O. à Vendôme</p>
+      <p>© 2026 Cécile Arnoux — Ostéopathe D.O. à Vendôme</p>
     </div>
   </footer>
 
@@ -394,15 +394,6 @@ import nourrImg from '../assets/images/nourrisson.jpg';
     opacity: 0; transform: translateY(30px);
     animation: fadeUp 0.9s 0.8s forwards;
   }
-  .hero-scroll {
-    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    color: rgba(255,255,255,0.5); font-size: 11px;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    animation: bounce 2s infinite;
-  }
-  .hero-scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent); }
-
   /* BUTTONS */
   .btn-primary {
     background: var(--sage); color: white;
@@ -504,7 +495,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   .contact-phone-icon { width: 64px; height: 64px; background: rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
   .contact-phone-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 16px; }
   .contact-phone-number { font-size: 34px; color: white; font-weight: 700; font-family: 'Playfair Display', serif; line-height: 1.2; }
-  .contact-phone-note { font-size: 14px; color: rgba(255,255,255,0.55); margin-top: 16px; line-height: 1.6; }
+  .contact-phone-note { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 16px; line-height: 1.6; }
 
   /* MAP */
   #map-section { padding: 0; height: 380px; }
@@ -519,6 +510,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
     align-items: center; gap: 10px; transition: all 0.3s; animation: pulse 3s infinite;
   }
   .float-rdv:hover { background: var(--sage); transform: scale(1.05); animation: none; }
+  .float-rdv:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {

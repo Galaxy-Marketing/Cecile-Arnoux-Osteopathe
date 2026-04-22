@@ -44,7 +44,7 @@ export default function AvisCarousel() {
     };
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
-  }, []);
+  }, [isMobile]);
 
   const repeated = [...avis, ...avis, ...avis, ...avis, ...avis, ...avis];
 

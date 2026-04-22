@@ -33,13 +33,13 @@ const schemaOrg = {
   priceRange: '€',
   medicalSpecialty: 'Osteopathic',
   sameAs: [
-    'https://www.google.com/maps/search/Cécile+Arnoux+Ostéopathe+Vendôme',
+    'https://maps.app.goo.gl/cecile-arnoux-osteopathe-vendome',
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '4.5',
+    ratingValue: '5',
     bestRating: '5',
-    ratingCount: '47',
+    ratingCount: '3',
   },
 };
 ---
@@ -72,6 +72,11 @@ const schemaOrg = {
 
   <!-- Schema.org -->
   <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
