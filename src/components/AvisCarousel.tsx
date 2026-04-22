@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 const avis = [
-  { name: "Mika Do", stars: 5, text: "Suite a des probl\u00e8me digestif j\u2019ai \u00e9t\u00e9 voir cette \u00e9thiopathe et depuis c\u2019est redevenu comme avant ..merci \u00e0 vous \ud83d\ude0a\ud83d\ude0a\ud83d\ude0a" },
-  { name: "Marie France Leproust", stars: 5, text: "Tr\u00e8s bon ost\u00e9opathe \u00e9thiopathe \u00e0 l\u2019\u00e9coute de ses patients. Salle d\u2019attente reposante, musique relaxante." },
-  { name: "Cyril Brosse", stars: 5, text: "En ce qui me concerne 1 s\u00e9ance pour un mal de dos qui me tenait depuis 1 mois." },
+  { name: "Mika D.", stars: 5, text: "Suite a des probl\u00e8me digestif j\u2019ai \u00e9t\u00e9 voir cette \u00e9thiopathe et depuis c\u2019est redevenu comme avant ..merci \u00e0 vous \ud83d\ude0a\ud83d\ude0a\ud83d\ude0a" },
+  { name: "Marie France L.", stars: 5, text: "Tr\u00e8s bon ost\u00e9opathe \u00e9thiopathe \u00e0 l\u2019\u00e9coute de ses patients. Salle d\u2019attente reposante, musique relaxante." },
+  { name: "Cyril B.", stars: 5, text: "En ce qui me concerne 1 s\u00e9ance pour un mal de dos qui me tenait depuis 1 mois." },
 ];
 
 function Stars({ n }: { n: number }) {
