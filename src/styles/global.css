@@ -112,11 +112,11 @@ footer {
   font-size: 20px; color: white; margin-bottom: 10px;
 }
 .footer-brand-desc {
-  font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7;
+  font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7;
 }
 .footer-col h4 {
   font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
-  color: rgba(255,255,255,0.35); font-weight: 600; margin-bottom: 16px;
+  color: rgba(255,255,255,0.5); font-weight: 600; margin-bottom: 16px;
 }
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: 8px; }
@@ -133,7 +133,7 @@ footer {
   padding: 20px 0;
 }
 .footer-bottom p {
-  font-size: 12px; color: rgba(255,255,255,0.25);
+  font-size: 12px; color: rgba(255,255,255,0.45);
 }
 
 /* Footer simple (articles) */

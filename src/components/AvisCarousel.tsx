@@ -26,7 +26,11 @@ function Stars({ n }: { n: number }) {
 export default function AvisCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 900;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 900);
+  }, []);
 
   // Desktop: auto-scroll infinite loop
   useEffect(() => {
@@ -82,8 +86,8 @@ export default function AvisCarousel() {
               className={`dot ${active === i ? 'active' : ''}`}
               onClick={() => {
                 setActive(i);
-                const track = document.querySelector('.avis-mobile-track');
-                if (track) (track as HTMLElement).scrollLeft = i * (track.clientWidth + 16);
+                const track = document.querySelector('.avis-mobile-track') as HTMLElement | null;
+                if (track && track.clientWidth > 0) track.scrollLeft = i * (track.clientWidth + 16);
               }}
               aria-label={`Avis ${i + 1}`}
             />

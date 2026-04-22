@@ -34,9 +34,14 @@ export default function FAQ() {
     <div className="faq-list">
       {questions.map((item, i) => (
         <div key={i} className={`faq-item ${open === i ? 'open' : ''}`}>
-          <button className="faq-question" onClick={() => setOpen(open === i ? null : i)}>
+          <button
+            className="faq-question"
+            onClick={() => setOpen(open === i ? null : i)}
+            aria-label={item.q}
+            aria-expanded={open === i}
+          >
             <span>{item.q}</span>
-            <span className="faq-icon">{open === i ? '−' : '+'}</span>
+            <span className="faq-icon" aria-hidden="true">{open === i ? '−' : '+'}</span>
           </button>
           <div className="faq-answer">
             <p>{item.a}</p>

@@ -32,6 +32,15 @@ const schemaOrg = {
   openingHours: ['Mo-Fr 08:00-19:00', 'Sa 08:00-12:00'],
   priceRange: '€',
   medicalSpecialty: 'Osteopathic',
+  sameAs: [
+    'https://www.google.com/maps/search/Cécile+Arnoux+Ostéopathe+Vendôme',
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.5',
+    bestRating: '5',
+    ratingCount: '47',
+  },
 };
 ---
 
@@ -50,6 +59,9 @@ const schemaOrg = {
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
   <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={title} />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="Cécile Arnoux Ostéopathe" />
 
