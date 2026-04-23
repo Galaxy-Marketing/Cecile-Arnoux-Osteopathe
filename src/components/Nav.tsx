@@ -58,7 +58,7 @@ export default function Nav({ activePage }: NavProps) {
             <li><a href="/#consultations" onClick={close}>Consultations</a></li>
             <li><a href="/#avis" onClick={close}>Avis</a></li>
             <li><a href="/blog/" onClick={close}>Blog</a></li>
-            <li><a href="/#contact" onClick={close} className="mobile-cta">Prendre RDV</a></li>
+            <li><a href="tel:0254670326" onClick={close} className="mobile-cta">📞 02 54 67 03 26</a></li>
           </ul>
         </div>
       </div>
@@ -104,7 +104,7 @@ export default function Nav({ activePage }: NavProps) {
         }
         .mobile-cta {
           margin-top: 8px; background: var(--sage);
-          color: white; text-align: center;
+          color: white !important; text-align: center;
           border-radius: 50px; padding: 14px 24px;
         }
         @media (max-width: 900px) {
