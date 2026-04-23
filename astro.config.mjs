@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   integrations: [react(), sitemap()],
-  site: 'https://cecile-arnoux-osteopathe.vercel.app',
+  site: 'https://www.cecile-arnoux.com',
   output: 'static',
 });
