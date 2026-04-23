@@ -118,14 +118,21 @@ export default function AvisCarousel() {
           scroll-snap-align: start; min-width: calc(85vw); width: calc(85vw);
         }
         .avis-dots {
-          display: flex; gap: 8px; justify-content: center; margin-top: 20px;
+          display: flex; gap: 0; justify-content: center; margin-top: 16px;
         }
         .dot {
+          width: 44px; height: 44px; border-radius: 50%;
+          background: transparent; border: none; cursor: pointer; padding: 0;
+          position: relative;
+        }
+        .dot::after {
+          content: ''; position: absolute; top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
           width: 8px; height: 8px; border-radius: 50%;
-          background: var(--border); border: none; cursor: pointer; padding: 0;
+          background: var(--border);
           transition: background 0.3s, transform 0.3s;
         }
-        .dot.active { background: var(--sage); transform: scale(1.3); }
+        .dot.active::after { background: var(--sage); transform: translate(-50%, -50%) scale(1.3); }
         @media (max-width: 900px) {
           .desktop-only { display: none; }
           .mobile-only { display: block; }

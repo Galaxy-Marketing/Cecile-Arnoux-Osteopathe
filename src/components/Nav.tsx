@@ -65,13 +65,15 @@ export default function Nav({ activePage }: NavProps) {
 
       <style>{`
         .hamburger {
-          display: none; flex-direction: column; justify-content: center;
-          gap: 5px; background: none; border: none; cursor: pointer; padding: 4px;
+          display: none; flex-direction: column; justify-content: center; align-items: center;
+          gap: 5px; background: none; border: none; cursor: pointer;
+          width: 44px; height: 44px; padding: 10px;
+          position: relative; z-index: 250; touch-action: manipulation;
         }
         .bar {
-          display: block; width: 24px; height: 2px;
+          display: block; width: 22px; height: 2px;
           background: var(--text-dark); border-radius: 2px;
-          transition: all 0.3s;
+          transition: all 0.3s; flex-shrink: 0;
         }
         .bar.open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
         .bar.open:nth-child(2) { opacity: 0; }
@@ -79,9 +81,10 @@ export default function Nav({ activePage }: NavProps) {
         .mobile-menu {
           display: none; position: fixed; inset: 0; z-index: 200;
           background: rgba(0,0,0,0.5); opacity: 0;
-          transition: opacity 0.3s;
+          visibility: hidden;
+          transition: opacity 0.3s, visibility 0.3s;
         }
-        .mobile-menu.open { opacity: 1; }
+        .mobile-menu.open { opacity: 1; visibility: visible; }
         .mobile-menu-inner {
           position: absolute; top: 0; right: 0; bottom: 0;
           width: min(320px, 85vw);

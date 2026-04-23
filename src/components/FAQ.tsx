@@ -73,7 +73,7 @@ export default function FAQ() {
           padding: 0;
         }
         .faq-item.open .faq-answer {
-          max-height: 300px;
+          max-height: 600px;
           padding-bottom: 20px;
         }
         .faq-answer p {
