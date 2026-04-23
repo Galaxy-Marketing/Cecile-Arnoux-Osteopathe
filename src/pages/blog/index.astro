@@ -17,7 +17,6 @@ const articles = [
     tag: 'Vendôme',
     title: 'Pourquoi consulter un ostéopathe à Vendôme ?',
     desc: 'Tout ce que vous devez savoir avant votre première consultation d\'ostéopathie à Vendôme.',
-    readTime: '5 min de lecture',
   },
   {
     href: '/blog/mal-de-dos/',
@@ -25,8 +24,7 @@ const articles = [
     imageAlt: 'Mal de dos ostéopathie',
     tag: 'Dos & Colonne',
     title: 'Mal de dos : quand et pourquoi voir un ostéopathe ?',
-    desc: 'Lombalgie, sciatique, douleurs cervicales — ce que l\'ostéopathie peut faire pour vous, honnêtement.',
-    readTime: '6 min de lecture',
+    desc: 'Lombalgie, sciatique, douleurs cervicales : ce que l\'ostéopathie peut faire pour votre dos.',
   },
   {
     href: '/blog/nourrisson/',
@@ -34,8 +32,7 @@ const articles = [
     imageAlt: 'Ostéopathie nourrisson',
     tag: 'Nourrissons',
     title: 'Ostéopathie pour nourrissons : coliques, torticolis, sommeil',
-    desc: 'Ce que les études disent vraiment sur l\'ostéopathie pédiatrique et quand consulter pour votre bébé.',
-    readTime: '5 min de lecture',
+    desc: 'Ce que l\'ostéopathie pédiatrique peut apporter à votre bébé et quand consulter.',
   },
   {
     href: '/blog/grossesse/',
@@ -43,8 +40,7 @@ const articles = [
     imageAlt: 'Ostéopathie grossesse',
     tag: 'Grossesse',
     title: 'Ostéopathie et grossesse : soulager les douleurs en sécurité',
-    desc: 'Douleurs pelviennes, lombaires, troubles du sommeil — l\'ostéopathie pendant la grossesse expliquée.',
-    readTime: '5 min de lecture',
+    desc: 'Douleurs pelviennes, lombaires, troubles du sommeil : comment l\'ostéopathie peut vous accompagner pendant la grossesse.',
   },
   {
     href: '/blog/sportif/',
@@ -53,7 +49,6 @@ const articles = [
     tag: 'Sport',
     title: 'Ostéopathie et sport : prévenir les blessures et les tendinites',
     desc: 'Comment l\'ostéopathie aide les sportifs à prévenir les tendinites et à optimiser leur récupération.',
-    readTime: '5 min de lecture',
   },
 ];
 ---
@@ -81,7 +76,6 @@ const articles = [
           <span class="blog-card-tag">{a.tag}</span>
           <h2 class="blog-card-title">{a.title}</h2>
           <p class="blog-card-desc">{a.desc}</p>
-          <div class="blog-card-meta">{a.readTime}</div>
         </div>
       </a>
     ))}
