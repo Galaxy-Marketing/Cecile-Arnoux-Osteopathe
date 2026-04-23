@@ -58,7 +58,7 @@ export default function Nav({ activePage }: NavProps) {
             <li><a href="/#consultations" onClick={close}>Consultations</a></li>
             <li><a href="/#avis" onClick={close}>Avis</a></li>
             <li><a href="/blog/" onClick={close}>Blog</a></li>
-            <li><a href="tel:0254670326" onClick={close} className="mobile-cta">📞 02 54 67 03 26</a></li>
+            <li><a href="tel:0254670326" onClick={close} className="mobile-cta">Prendre RDV</a></li>
           </ul>
         </div>
       </div>
