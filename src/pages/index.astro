@@ -202,14 +202,16 @@ import nourrImg from '../assets/images/nourrisson.jpg';
         <h2 class="section-title">Ce que disent<br><em>mes patients</em></h2>
       </div>
       <div class="avis-score reveal">
-        <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <div class="avis-score-text">
+          <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;<span class="half-star-wrap">&#9733;</span></div>
+          <div class="avis-count">Avis Google</div>
+        </div>
+        <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="avis-g-logo" aria-hidden="true">
           <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
           <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
           <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
           <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
         </svg>
-        <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;<span class="half-star-wrap">&#9733;</span></div>
-        <div class="avis-count">Avis Google</div>
       </div>
     </div>
     <AvisCarousel client:load />
@@ -460,8 +462,10 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   /* AVIS */
   #avis { background: var(--warm-white); overflow: hidden; padding: 0 0 80px; }
   .avis-header { display: flex; justify-content: space-between; align-items: flex-end; padding: 100px 60px 50px; }
-  .avis-score { text-align: right; }
-  .avis-stars { font-size: 36px; letter-spacing: 3px; color: #E8B84B; line-height: 1; margin: 10px 0 6px; display: block; }
+  .avis-score { display: flex; flex-direction: column; align-items: flex-end; gap: 0; }
+  .avis-score-text { text-align: right; }
+  .avis-g-logo { margin-top: 10px; flex-shrink: 0; }
+  .avis-stars { font-size: 36px; letter-spacing: 3px; color: #E8B84B; line-height: 1; margin-bottom: 6px; display: block; }
   .half-star-wrap { display: inline-block; position: relative; color: #ddd; }
   .half-star-wrap::after { content: '★'; position: absolute; left: 0; top: 0; width: 50%; overflow: hidden; color: #E8B84B; }
   .avis-count { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
@@ -524,7 +528,9 @@ import nourrImg from '../assets/images/nourrisson.jpg';
     .consult-grid { grid-template-columns: 1fr; gap: 20px; }
     .blog-grid { grid-template-columns: 1fr 1fr; }
     .avis-header { flex-direction: column; align-items: flex-start; gap: 20px; padding: 70px 24px 40px; }
-    .avis-score { text-align: left; }
+    .avis-score { flex-direction: row; align-items: center; gap: 16px; }
+    .avis-score-text { text-align: left; }
+    .avis-g-logo { margin-top: 0; order: 1; }
     .contact-grid { grid-template-columns: 1fr; }
     #map-section { height: 260px; }
     .float-rdv { bottom: 14px; right: 14px; left: 14px; justify-content: center; border-radius: 14px; }
@@ -544,6 +550,13 @@ import nourrImg from '../assets/images/nourrisson.jpg';
     #avis { padding-bottom: 52px; }
     .avis-header { padding: 52px 20px 36px; }
     #map-section { height: 220px; }
+  }
+
+  @media (hover: none) {
+    .blog-mini-card:hover { box-shadow: none; transform: none; }
+    .blog-mini-card:hover .blog-mini-img { transform: none; }
+    .soin-card:hover { transform: none; box-shadow: none; }
+    .soin-card:hover .soin-image { transform: none; }
   }
 </style>
 

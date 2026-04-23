@@ -116,4 +116,8 @@ const articles = [
     .blog-grid { grid-template-columns: 1fr; padding: 40px 20px; }
     h1 { font-size: 30px; }
   }
+  @media (hover: none) {
+    .blog-card:hover { transform: none; box-shadow: none; }
+    .blog-card:hover .blog-card-img { transform: none; }
+  }
 </style>

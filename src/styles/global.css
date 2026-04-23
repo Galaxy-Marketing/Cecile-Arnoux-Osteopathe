@@ -152,7 +152,8 @@ footer.footer-simple {
   footer.footer-simple { padding: 28px 24px; }
 }
 @media (max-width: 600px) {
-  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .footer-grid > div:first-child { grid-column: 1 / -1; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   footer.footer-simple { flex-direction: column; gap: 10px; text-align: center; }
 }

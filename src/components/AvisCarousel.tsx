@@ -20,6 +20,7 @@ function Stars({ n }: { n: number }) {
 
 export default function AvisCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const mobileTrackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -46,6 +47,20 @@ export default function AvisCarousel() {
     return () => cancelAnimationFrame(raf);
   }, [isMobile]);
 
+  // Mobile: update active dot on scroll
+  useEffect(() => {
+    if (!isMobile) return;
+    const track = mobileTrackRef.current;
+    if (!track) return;
+    const onScroll = () => {
+      const cardWidth = track.clientWidth;
+      const idx = Math.round(track.scrollLeft / (cardWidth + 16));
+      setActive(Math.min(Math.max(idx, 0), avis.length - 1));
+    };
+    track.addEventListener('scroll', onScroll, { passive: true });
+    return () => track.removeEventListener('scroll', onScroll);
+  }, [isMobile]);
+
   const repeated = [...avis, ...avis, ...avis, ...avis, ...avis, ...avis];
 
   return (
@@ -65,7 +80,7 @@ export default function AvisCarousel() {
 
       {/* Mobile snap scroll */}
       <div className="avis-mobile mobile-only">
-        <div className="avis-mobile-track">
+        <div ref={mobileTrackRef} className="avis-mobile-track">
           {avis.map((a, i) => (
             <div key={i} className="avis-card mobile-card">
               <Stars n={a.stars} />
@@ -80,9 +95,10 @@ export default function AvisCarousel() {
               key={i}
               className={`dot ${active === i ? 'active' : ''}`}
               onClick={() => {
-                setActive(i);
-                const track = document.querySelector('.avis-mobile-track') as HTMLElement | null;
-                if (track && track.clientWidth > 0) track.scrollLeft = i * (track.clientWidth + 16);
+                const track = mobileTrackRef.current;
+                if (track && track.clientWidth > 0) {
+                  track.scrollTo({ left: i * (track.clientWidth + 16), behavior: 'smooth' });
+                }
               }}
               aria-label={`Avis ${i + 1}`}
             />
