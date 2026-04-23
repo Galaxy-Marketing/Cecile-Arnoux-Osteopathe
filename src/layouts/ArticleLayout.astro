@@ -14,7 +14,6 @@ interface Props {
   breadcrumb: string;
   ctaTitle: string;
   ctaDesc: string;
-  pubDate?: string;
   backLabel?: string;
   backHref?: string;
 }
@@ -30,7 +29,6 @@ const {
   breadcrumb,
   ctaTitle,
   ctaDesc,
-  pubDate,
   backLabel = 'Retour au blog',
   backHref = '/blog/',
 } = Astro.props;
@@ -56,10 +54,6 @@ const breadcrumbSchema = {
     </div>
     <span class="article-tag">{tag}</span>
     <h1>{h1}</h1>
-    <div class="article-meta">
-      Par Cécile Arnoux, ostéopathe D.O. — Vendôme (41100)
-      {pubDate && <> · <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</time></>}
-    </div>
     <Image src={image} alt={imageAlt} class="article-img" width={1200} height={600} loading="eager" />
     <slot />
     <div class="cta-box">
@@ -94,11 +88,7 @@ const breadcrumbSchema = {
     font-size: clamp(30px, 4.5vw, 48px); line-height: 1.15;
     color: var(--text-dark); margin-bottom: 20px;
   }
-  .article-meta {
-    font-size: 13px; color: var(--text-light);
-    margin-bottom: 36px; padding-bottom: 28px;
-    border-bottom: 1px solid var(--border);
-  }
+  .article-img { margin-top: 12px; }
   .article-img {
     width: 100%; height: auto; border-radius: 16px;
     display: block; margin-bottom: 44px;
