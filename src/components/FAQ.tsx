@@ -10,20 +10,12 @@ const questions = [
     a: "Non. L'ostéopathie est accessible en accès direct, sans ordonnance médicale. Vous pouvez prendre rendez-vous directement au cabinet. Cependant, si vous avez un suivi médical en cours, il est utile d'en informer l'ostéopathe lors de la consultation.",
   },
   {
-    q: "Est-ce que ça fait mal ?",
-    a: "Les techniques ostéopathiques sont généralement indolores. Certaines mobilisations peuvent provoquer une légère sensibilité, surtout sur des zones déjà douloureuses. L'ostéopathe adapte en permanence son geste à votre ressenti et à votre confort.",
-  },
-  {
     q: "Combien de temps dure une séance ?",
     a: "Une première consultation dure entre 45 minutes et 1 heure. Elle inclut un entretien sur vos douleurs et votre historique médical, un bilan postural, puis le traitement. Les séances suivantes sont un peu plus courtes.",
   },
   {
     q: "L'ostéopathie est-elle remboursée ?",
     a: "La Sécurité Sociale ne rembourse pas les consultations d'ostéopathie. En revanche, de nombreuses mutuelles complémentaires prennent en charge tout ou partie du tarif. Renseignez-vous auprès de votre mutuelle avant votre premier rendez-vous.",
-  },
-  {
-    q: "Quelle est la différence entre ostéopathie et étiopathie ?",
-    a: "L'ostéopathie vise à restaurer la mobilité et l'équilibre global du corps par des techniques manuelles douces. L'étiopathie cherche à identifier précisément la cause mécanique d'un problème pour le corriger de façon ciblée. Cécile Arnoux pratique les deux approches, ce qui lui permet d'adapter sa méthode à chaque patient.",
   },
 ];
 
