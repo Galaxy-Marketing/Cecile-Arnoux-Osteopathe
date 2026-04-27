@@ -2,20 +2,20 @@ import { useState } from 'react';
 
 const questions = [
   {
-    q: "L'ostéopathie, c'est pour qui ?",
-    a: "L'ostéopathie s'adresse à tous : nourrissons, enfants, adultes, femmes enceintes et personnes âgées. Elle traite les douleurs musculo-squelettiques, les maux de tête, les troubles digestifs, et bien d'autres situations. Chaque prise en charge est adaptée à l'âge et à l'état de santé du patient.",
+    q: "L'ostéopathie s'adresse-t-elle à tout le monde ?",
+    a: "Oui, de la naissance jusqu'au grand âge. Nourrissons, enfants, sportifs, femmes enceintes et seniors peuvent tous consulter. Cécile adapte son approche à chaque profil et à chaque situation.",
   },
   {
     q: "Faut-il une ordonnance pour consulter ?",
-    a: "Non. L'ostéopathie est accessible en accès direct, sans ordonnance médicale. Vous pouvez prendre rendez-vous directement au cabinet. Cependant, si vous avez un suivi médical en cours, il est utile d'en informer l'ostéopathe lors de la consultation.",
-  },
-  {
-    q: "Combien de temps dure une séance ?",
-    a: "Une première consultation dure entre 45 minutes et 1 heure. Elle inclut un entretien sur vos douleurs et votre historique médical, un bilan postural, puis le traitement. Les séances suivantes sont un peu plus courtes.",
+    a: "Non. L'ostéopathie est accessible en accès direct, sans ordonnance médicale. Vous pouvez prendre rendez-vous directement par téléphone. Si vous avez un suivi médical en cours, il est utile d'en informer Cécile lors de la consultation.",
   },
   {
     q: "L'ostéopathie est-elle remboursée ?",
-    a: "La Sécurité Sociale ne rembourse pas les consultations d'ostéopathie. En revanche, de nombreuses mutuelles complémentaires prennent en charge tout ou partie du tarif. Renseignez-vous auprès de votre mutuelle avant votre premier rendez-vous.",
+    a: "Le remboursement varie selon votre mutuelle et votre formule. Nous vous invitons à vous renseigner directement auprès de votre organisme pour connaître vos conditions de prise en charge.",
+  },
+  {
+    q: "Comment se préparer à une première séance ?",
+    a: "Prévoyez une tenue confortable pour la séance. Si vous avez des radios ou IRM en lien avec votre douleur, pensez à les apporter. Cécile s'occupe du reste.",
   },
 ];
 
