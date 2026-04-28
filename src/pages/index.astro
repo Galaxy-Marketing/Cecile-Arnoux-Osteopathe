@@ -349,6 +349,45 @@ import nourrImg from '../assets/images/nourrisson.jpg';
 
   <!-- FLOATING CTA -->
   <a href="tel:0254670326" class="float-rdv">Appeler pour RDV</a>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "L'ostéopathie s'adresse-t-elle à tout le monde ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, de la naissance jusqu'au grand âge. Nourrissons, enfants, sportifs, femmes enceintes et seniors peuvent tous consulter. Cécile adapte son approche à chaque profil et à chaque situation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il une ordonnance pour consulter ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. L'ostéopathie est accessible en accès direct, sans ordonnance médicale. Vous pouvez prendre rendez-vous directement par téléphone. Si vous avez un suivi médical en cours, il est utile d'en informer Cécile lors de la consultation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "L'ostéopathie est-elle remboursée ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le remboursement varie selon votre mutuelle et votre formule. Nous vous invitons à vous renseigner directement auprès de votre organisme pour connaître vos conditions de prise en charge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment se préparer à une première séance ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prévoyez une tenue confortable pour la séance. Si vous avez des radios ou IRM en lien avec votre douleur, pensez à les apporter. Cécile s'occupe du reste."
+        }
+      }
+    ]
+  })} />
 </BaseLayout>
 
 <style>
