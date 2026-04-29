@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   integrations: [react(), sitemap()],
-  site: 'https://www.cecile-arnoux.com',
+  site: 'https://cecile-arnoux.com',
   output: 'static',
 });
