@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.cecile-arnoux.com/sitemap-index.xml
+Sitemap: https://cecile-arnoux.com/sitemap-index.xml
