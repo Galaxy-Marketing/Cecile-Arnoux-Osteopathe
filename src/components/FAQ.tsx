@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 
 const questions = [
   {
@@ -7,7 +7,7 @@ const questions = [
   },
   {
     q: "Faut-il une ordonnance pour consulter ?",
-    a: "Non. L'ostéopathie est accessible en accès direct, sans ordonnance médicale. Vous pouvez prendre rendez-vous directement par téléphone. Si vous avez un suivi médical en cours, il est utile d'en informer Cécile lors de la consultation.",
+    a: "Non. L'ostéopathie est accessible sans ordonnance médicale. Vous pouvez prendre rendez-vous directement par téléphone. Si vous avez un suivi médical en cours, il est utile d'en informer Cécile lors de la consultation.",
   },
   {
     q: "L'ostéopathie est-elle remboursée ?",
