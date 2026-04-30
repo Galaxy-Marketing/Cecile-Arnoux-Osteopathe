@@ -1,0 +1,515 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav';
+import StatsBar from '../../components/StatsBar';
+import FAQ from '../../components/FAQ';
+import AvisCarousel from '../../components/AvisCarousel';
+
+import heroImg from '../../assets/images/hero.jpg';
+import aboutImg from '../../assets/images/img2.png';
+import soinDosImg from '../../assets/images/soin-dos.jpg';
+import sportifImg from '../../assets/images/sportif.jpg';
+import soinNourrImg from '../../assets/images/soin-nourrisson.jpg';
+import grossesseImg from '../../assets/images/grossesse.jpg';
+import migraineImg from '../../assets/images/migraine.jpg';
+import digestifImg from '../../assets/images/digestif.jpg';
+import dosImg from '../../assets/images/dos.jpg';
+import nourrImg from '../../assets/images/nourrisson.jpg';
+---
+
+<BaseLayout
+  title="Cécile Arnoux - Osteopath in Vendôme"
+  description="Cécile Arnoux, osteopath D.O. in Vendôme (41100). Appointments available at the practice, 1 rue des États-Unis d'Amérique. Call 02 54 67 03 26."
+  canonical="https://www.cecile-arnoux.com/en/"
+  lang="en"
+  hreflangFr="https://www.cecile-arnoux.com/"
+  hreflangEn="https://www.cecile-arnoux.com/en/"
+>
+  <Nav lang="en" client:load />
+
+  <!-- HERO -->
+  <section id="hero" aria-label="Practice presentation">
+    <div class="hero-bg">
+      <Image src={heroImg} alt="Osteopathy practice Vendôme" width={1920} height={1080} loading="eager" class="hero-img" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Osteopath D.O. & Etiopath — Vendôme</div>
+      <h1 class="hero-title">Restore your <em>balance</em><br>and free yourself from pain</h1>
+      <p class="hero-subtitle">
+        A gentle, personalised approach to relieve your pain,
+        improve your mobility and guide you towards lasting wellbeing.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:0254670326" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          02 54 67 03 26
+        </a>
+        <a href="#consultations" class="btn-secondary">Discover our consultations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <StatsBar lang="en" client:load />
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-image-wrap reveal-left">
+      <Image src={aboutImg} alt="Cécile Arnoux osteopath in Vendôme" width={800} height={600} class="about-image-main" loading="lazy" />
+    </div>
+    <div class="about-text reveal-right">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Cécile Arnoux,<br><em>osteopath D.O.</em></h2>
+      <p class="section-desc">
+        Graduated in osteopathy and etiopathy, Cécile Arnoux has been practising in Vendôme
+        for over 24 years with an approach centred on listening and finding the root cause
+        of each pain.
+      </p>
+      <p>
+        Osteopathy allows her to approach the body as a whole, treating causes rather than symptoms.
+        Etiopathy complements this approach with mechanical precision: identifying the exact origin
+        of the problem and correcting it durably.
+      </p>
+      <p>
+        She sees patients of all ages — infants, athletes, pregnant women and seniors — with the same
+        attention and commitment to their wellbeing.
+      </p>
+      <div class="about-diplomes">
+        <div class="diplome-item"><div class="diplome-dot"></div>Osteopathy Degree (D.O.)</div>
+        <div class="diplome-item"><div class="diplome-dot"></div>Etiopathy Degree</div>
+      </div>
+      <div class="about-signature">Cécile Arnoux</div>
+    </div>
+  </section>
+
+  <!-- CONSULTATIONS -->
+  <section id="consultations" aria-label="Consultations">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label">Consultations</div>
+      <h2 class="section-title">Comprehensive and<br><em>personalised care</em></h2>
+    </div>
+    <div class="soins-grid">
+      <div class="soin-card reveal">
+        <div class="soin-img-wrap">
+          <Image src={soinDosImg} alt="Back pain osteopathy" width={600} height={400} class="soin-image" loading="lazy" />
+        </div>
+        <div class="soin-body">
+          <h3 class="soin-title">Back Pain</h3>
+          <p class="soin-desc">Lumbar pain, sciatica, disc herniation, scoliosis… Precise and gentle manipulation to relieve your spinal pain quickly and durably.</p>
+          <span class="soin-tag">Spine</span>
+        </div>
+      </div>
+      <div class="soin-card reveal" style="transition-delay:0.1s">
+        <div class="soin-img-wrap">
+          <Image src={sportifImg} alt="Sports osteopathy tendinitis" width={600} height={400} class="soin-image" loading="lazy" />
+        </div>
+        <div class="soin-body">
+          <h3 class="soin-title">Athletes & Tendinitis</h3>
+          <p class="soin-desc">Tendinitis, sprains, injury prevention, performance optimisation. Tailored support adapted to your sporting demands to help you recover and progress.</p>
+          <span class="soin-tag">Sport & Performance</span>
+        </div>
+      </div>
+      <div class="soin-card reveal" style="transition-delay:0.2s">
+        <div class="soin-img-wrap">
+          <Image src={soinNourrImg} alt="Osteopathy infants children" width={600} height={400} class="soin-image" loading="lazy" />
+        </div>
+        <div class="soin-body">
+          <h3 class="soin-title">Infants & Children</h3>
+          <p class="soin-desc">Sleep disorders, colic, infant torticollis. An ultra-gentle and safe approach from the very first days of life.</p>
+          <span class="soin-tag">Paediatrics</span>
+        </div>
+      </div>
+      <div class="soin-card reveal" style="transition-delay:0.1s">
+        <div class="soin-img-wrap">
+          <Image src={grossesseImg} alt="Osteopathy pregnancy" width={600} height={400} class="soin-image" loading="lazy" />
+        </div>
+        <div class="soin-body">
+          <h3 class="soin-title">Pregnancy & Postnatal</h3>
+          <p class="soin-desc">Pelvic pain, pubic symphysis pain, preparation for childbirth, postnatal recovery. Gentle support at every stage of motherhood.</p>
+          <span class="soin-tag">Maternity</span>
+        </div>
+      </div>
+      <div class="soin-card reveal" style="transition-delay:0.2s">
+        <div class="soin-img-wrap">
+          <Image src={migraineImg} alt="Headaches migraines osteopathy" width={600} height={400} class="soin-image" loading="lazy" />
+        </div>
+        <div class="soin-body">
+          <h3 class="soin-title">Headaches, ENT & Migraines</h3>
+          <p class="soin-desc">Headaches, migraines, vertigo, chronic sinusitis, rhinitis, serous otitis. Targeted cranial and cervical techniques to address the root cause.</p>
+          <span class="soin-tag">Cranial & ENT</span>
+        </div>
+      </div>
+      <div class="soin-card reveal" style="transition-delay:0.3s">
+        <div class="soin-img-wrap">
+          <Image src={digestifImg} alt="Digestive disorders osteopathy" width={600} height={400} class="soin-image" loading="lazy" />
+        </div>
+        <div class="soin-body">
+          <h3 class="soin-title">Digestive & Visceral Disorders</h3>
+          <p class="soin-desc">Constipation, bloating, acid reflux (GERD), irritable bowel syndrome, difficult digestion. Osteopathy and etiopathy act on visceral and circulatory disorders.</p>
+          <span class="soin-tag">Digestive system</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST VISIT -->
+  <section id="consultation" class="bg-cream">
+    <div class="reveal" style="text-align:center;margin-bottom:44px">
+      <div class="section-label">Your first visit</div>
+      <h2 class="section-title">How does<br><em>a consultation work?</em></h2>
+    </div>
+    <div class="consult-grid">
+      <div class="consult-step reveal">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Information gathering and assessment</h3>
+        <p class="step-desc">The session begins with a comprehensive intake: pain description, medical history, lifestyle habits. A careful assessment helps better understand your situation before any treatment.</p>
+      </div>
+      <div class="consult-step reveal" style="transition-delay:0.15s">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Manual treatment</h3>
+        <p class="step-desc">Precise and personalised manual techniques, tailored to your body and specific needs. The goal: relieve your pain while respecting your physiology.</p>
+      </div>
+      <div class="consult-step reveal" style="transition-delay:0.3s">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Personalised advice</h3>
+        <p class="step-desc">At the end of the session, Cécile shares expert guidance: posture, exercises, lifestyle advice to durably support your wellbeing.</p>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:52px">
+      <a href="tel:0254670326" class="btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call to book an appointment: 02 54 67 03 26
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-label="Frequently asked questions">
+    <div class="reveal" style="text-align:center;margin-bottom:56px">
+      <div class="section-label">Frequently Asked Questions</div>
+      <h2 class="section-title">What you <em>want to know</em></h2>
+    </div>
+    <FAQ lang="en" client:load />
+    <div class="reveal" style="text-align:center;margin-top:56px">
+      <div class="faq-blog-hint">Want to learn more?</div>
+      <a href="/en/blog/" class="btn-primary">Read all articles</a>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="avis" aria-label="Patient testimonials">
+    <div class="avis-header">
+      <div class="reveal">
+        <div class="section-label">Testimonials</div>
+        <h2 class="section-title">What<br><em>patients say</em></h2>
+      </div>
+      <div class="avis-score reveal">
+        <div class="avis-score-text">
+          <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;<span class="half-star-wrap">&#9733;</span></div>
+          <div class="avis-count">Google Reviews</div>
+        </div>
+        <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="avis-g-logo" aria-hidden="true">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+      </div>
+    </div>
+    <AvisCarousel client:load />
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" class="bg-white">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <div class="section-label">The blog</div>
+      <h2 class="section-title">Advice & <em>health articles</em></h2>
+    </div>
+    <div class="blog-grid">
+      <a href="/en/blog/back-pain/" class="blog-mini-card reveal">
+        <div class="blog-mini-img-wrap">
+          <Image src={dosImg} alt="Back pain osteopathy" width={600} height={400} class="blog-mini-img" loading="lazy" />
+        </div>
+        <div class="blog-mini-body">
+          <div class="blog-mini-tag">Spine</div>
+          <h3>Back pain: when to see an osteopath?</h3>
+          <p>Lumbar pain, sciatica, cervical tension… How osteopathy can durably relieve your spinal pain.</p>
+          <div class="blog-mini-link">Read article →</div>
+        </div>
+      </a>
+      <a href="/en/blog/infant/" class="blog-mini-card reveal" style="transition-delay:0.1s">
+        <div class="blog-mini-img-wrap">
+          <Image src={nourrImg} alt="Infant osteopathy" width={600} height={400} class="blog-mini-img" loading="lazy" />
+        </div>
+        <div class="blog-mini-body">
+          <div class="blog-mini-tag">Paediatrics</div>
+          <h3>Infant osteopathy: colic, torticollis, sleep</h3>
+          <p>From the very first days of life, osteopathy can help your baby with ultra-gentle techniques.</p>
+          <div class="blog-mini-link">Read article →</div>
+        </div>
+      </a>
+      <a href="/en/blog/pregnancy/" class="blog-mini-card reveal" style="transition-delay:0.2s">
+        <div class="blog-mini-img-wrap">
+          <Image src={grossesseImg} alt="Pregnancy osteopathy" width={600} height={400} class="blog-mini-img" loading="lazy" />
+        </div>
+        <div class="blog-mini-body">
+          <div class="blog-mini-tag">Pregnancy</div>
+          <h3>Osteopathy & pregnancy: pelvic and lumbar pain</h3>
+          <p>Gentle and safe support throughout pregnancy to relieve pain and discomfort.</p>
+          <div class="blog-mini-link">Read article →</div>
+        </div>
+      </a>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:44px">
+      <a href="/en/blog/" class="btn-primary">View all articles</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-cream">
+    <div class="reveal" style="text-align:center;margin-bottom:60px">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Book<br><em>an appointment</em></h2>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-info-col">
+        <div class="contact-card">
+          <div class="contact-card-label">Practice address</div>
+          <div class="contact-card-address">1 rue des États-Unis d'Amérique<br>41100 Vendôme</div>
+          <div class="contact-card-note">Next to Pré aux Chats · Parking nearby</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-label">Appointment hours</div>
+          <div class="horaires">
+            <div class="horaire-row">
+              <span>Mon – Fri</span>
+              <span class="horaire-val">8am – 7pm</span>
+            </div>
+            <div class="horaire-row">
+              <span>Saturday</span>
+              <span class="horaire-val">8am – 12pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="tel:0254670326" class="contact-phone-box">
+        <div class="contact-phone-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="contact-phone-label">Book an appointment</div>
+        <div class="contact-phone-number">02 54 67 03 26</div>
+        <div class="contact-phone-note">No form, no waiting.<br>One call is all it takes.</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <div id="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5360.745871010469!2d1.057390177133228!3d47.79360607504419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e36a4a2152f64b%3A0x4eeff7b51c5c9473!2sArnoux%20C%C3%A9cile!5e0!3m2!1sfr!2sfr!4v1776932777093!5m2!1sfr!2sfr"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Cécile Arnoux Osteopath practice Vendôme">
+    </iframe>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Cécile Arnoux — Ostéopathe D.O.</div>
+        <div class="footer-brand-desc">
+          Osteopathy practice in Vendôme<br>
+          1 rue des États-Unis d'Amérique, 41100 Vendôme
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#consultations">Consultations</a></li>
+          <li><a href="#consultation">The consultation</a></li>
+          <li><a href="#avis">Testimonials</a></li>
+          <li><a href="#contact">Contact & Appointments</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0254670326">02 54 67 03 26</a></li>
+          <li><a href="#contact">Vendôme 41100</a></li>
+          <li><a href="#contact">Mon–Fri: 8am–7pm</a></li>
+          <li><a href="#contact">Sat: 8am–12pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Cécile Arnoux — Osteopath D.O. in Vendôme &nbsp;·&nbsp; <a href="/en/legal/" style="color:inherit;opacity:0.55;font-size:12px;text-decoration:none;">Legal notice</a></p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <a href="tel:0254670326" class="float-rdv">Call to book</a>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is osteopathy suitable for everyone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, from birth to old age. Infants, children, athletes, pregnant women and seniors can all benefit. Cécile adapts her approach to each individual and situation." } },
+      { "@type": "Question", "name": "Do I need a referral to book an appointment?", "acceptedAnswer": { "@type": "Answer", "text": "No. Osteopathy is accessible without a medical prescription. You can book an appointment directly by phone." } },
+      { "@type": "Question", "name": "Is osteopathy covered by insurance?", "acceptedAnswer": { "@type": "Answer", "text": "Coverage depends on your health insurance plan. We recommend checking directly with your insurer." } },
+      { "@type": "Question", "name": "How should I prepare for my first session?", "acceptedAnswer": { "@type": "Answer", "text": "Wear comfortable clothing. If you have X-rays or MRI scans related to your pain, bring them along." } }
+    ]
+  })} />
+</BaseLayout>
+
+<style>
+  html { overflow-x: hidden; }
+  body { overflow-x: hidden; max-width: 100vw; }
+  #hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; overflow: hidden; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(135deg, rgba(28,28,28,0.72) 0%, rgba(78,115,83,0.35) 100%); pointer-events: none; }
+  .hero-content { position: relative; z-index: 2; max-width: 720px; padding: 0 60px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); padding: 8px 18px; border-radius: 50px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; margin-bottom: 28px; opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s 0.2s forwards; }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--sage-light); border-radius: 50%; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(42px, 6vw, 72px); color: white; line-height: 1.1; font-weight: 700; margin-bottom: 20px; opacity: 0; transform: translateY(30px); animation: fadeUp 0.9s 0.4s forwards; }
+  .hero-title em { font-style: italic; color: var(--sage-light); }
+  .hero-subtitle { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 500px; margin-bottom: 40px; font-weight: 300; opacity: 0; transform: translateY(30px); animation: fadeUp 0.9s 0.6s forwards; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; transform: translateY(30px); animation: fadeUp 0.9s 0.8s forwards; }
+  .btn-primary { background: var(--sage); color: white; padding: 16px 32px; border-radius: 50px; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+  .btn-primary:hover { background: var(--sage-dark); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(122,158,126,0.4); }
+  .btn-secondary { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); color: white; padding: 16px 32px; border-radius: 50px; font-size: 15px; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s; }
+  .btn-secondary:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+  section { padding: 100px 60px; }
+  .bg-cream { background: var(--cream); }
+  .bg-white { background: white; }
+  .section-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); font-weight: 600; margin-bottom: 14px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px); color: var(--text-dark); line-height: 1.15; margin-bottom: 20px; }
+  .section-title em { font-style: italic; color: var(--sage-dark); }
+  .section-desc { font-size: 17px; color: var(--text-mid); line-height: 1.8; max-width: 580px; }
+  #about { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-image-main { width: 100%; height: 580px; object-fit: cover; border-radius: 4px 60px 4px 60px; display: block; }
+  .about-text { padding-right: 20px; }
+  .about-text .section-desc { max-width: 100%; }
+  .about-text p { font-size: 16px; color: var(--text-mid); line-height: 1.85; margin-top: 18px; }
+  .about-diplomes { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+  .diplome-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-mid); }
+  .diplome-dot { width: 8px; height: 8px; background: var(--sage); border-radius: 50%; flex-shrink: 0; }
+  .about-signature { margin-top: 32px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: var(--sage-dark); }
+  #consultations { background: var(--warm-white); }
+  #consultations .section-title { text-align: center; }
+  .soins-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
+  .soin-card { background: var(--cream); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); transition: transform 0.35s, box-shadow 0.35s; }
+  .soin-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,0.1); }
+  .soin-img-wrap { width: 100%; aspect-ratio: 3/2; overflow: hidden; }
+  .soin-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .soin-card:hover .soin-image { transform: scale(1.04); }
+  .soin-body { padding: 28px; }
+  .soin-title { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--text-dark); margin-bottom: 10px; padding-bottom: 10px; border-bottom: 2px solid var(--sage-light); display: inline-block; }
+  .soin-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+  .soin-tag { display: inline-block; margin-top: 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage-dark); background: rgba(122,158,126,0.12); padding: 5px 12px; border-radius: 20px; }
+  .consult-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .consult-step { background: white; border-radius: 18px; padding: 28px 24px; border: 1px solid var(--border); transition: transform 0.35s, box-shadow 0.35s; }
+  .consult-step:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.07); }
+  .step-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: rgba(122,158,126,0.22); line-height: 1; margin-bottom: 12px; }
+  .step-title { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--text-dark); margin-bottom: 10px; }
+  .step-desc { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+  #faq { background: var(--cream); }
+  .faq-blog-hint { font-size: 15px; color: var(--text-light); margin-bottom: 18px; }
+  #avis { background: var(--warm-white); overflow: hidden; padding: 0 0 80px; }
+  .avis-header { display: flex; justify-content: space-between; align-items: flex-end; padding: 100px 60px 50px; }
+  .avis-score { display: flex; flex-direction: column; align-items: flex-end; }
+  .avis-score-text { text-align: right; }
+  .avis-g-logo { margin-top: 10px; flex-shrink: 0; }
+  .avis-stars { font-size: 36px; letter-spacing: 3px; color: #E8B84B; line-height: 1; margin-bottom: 6px; display: block; }
+  .half-star-wrap { display: inline-block; position: relative; color: #ddd; }
+  .half-star-wrap::after { content: '★'; position: absolute; left: 0; top: 0; width: 50%; overflow: hidden; color: #E8B84B; }
+  .avis-count { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
+  #blog { padding: 80px 40px; }
+  .blog-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .blog-mini-card { border: 1px solid var(--border); border-radius: 20px; overflow: hidden; background: var(--cream); text-decoration: none; color: inherit; display: block; transition: box-shadow 0.3s, transform 0.3s; }
+  .blog-mini-card:hover { box-shadow: 0 8px 30px rgba(78,115,83,0.15); transform: translateY(-4px); }
+  .blog-mini-img-wrap { width: 100%; aspect-ratio: 3/2; overflow: hidden; }
+  .blog-mini-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .blog-mini-card:hover .blog-mini-img { transform: scale(1.03); }
+  .blog-mini-body { padding: 28px; }
+  .blog-mini-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 14px; }
+  .blog-mini-body h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 12px; color: var(--text-dark); line-height: 1.3; }
+  .blog-mini-body p { font-size: 14px; color: var(--text-light); line-height: 1.7; }
+  .blog-mini-link { margin-top: 20px; font-size: 13px; font-weight: 600; color: var(--sage-dark); }
+  #contact { padding: 100px 60px; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 1100px; margin: 0 auto; }
+  .contact-info-col { display: flex; flex-direction: column; gap: 20px; }
+  .contact-card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 32px 28px; }
+  .contact-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 14px; }
+  .contact-card-address { font-size: 17px; color: var(--text-dark); font-weight: 500; line-height: 1.7; }
+  .contact-card-note { margin-top: 12px; font-size: 14px; color: var(--text-light); line-height: 1.6; }
+  .horaires { display: flex; flex-direction: column; gap: 10px; }
+  .horaire-row { display: flex; justify-content: space-between; align-items: center; }
+  .horaire-row span { font-size: 14px; color: var(--text-dark); font-weight: 500; }
+  .horaire-val { font-size: 15px; font-weight: 700; color: var(--text-dark); }
+  .contact-phone-box { background: var(--sage-dark); border-radius: 24px; padding: 48px 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 320px; text-decoration: none; transition: background 0.3s, transform 0.2s; }
+  .contact-phone-box:hover { background: #3d5c42; transform: translateY(-3px); }
+  .contact-phone-icon { width: 64px; height: 64px; background: rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+  .contact-phone-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 16px; }
+  .contact-phone-number { font-size: 34px; color: white; font-weight: 700; font-family: 'Playfair Display', serif; line-height: 1.2; }
+  .contact-phone-note { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 16px; line-height: 1.6; }
+  #map-section { padding: 0; height: 380px; }
+  #map-section iframe { width: 100%; height: 100%; border: none; display: block; filter: grayscale(20%); }
+  .float-rdv { position: fixed; bottom: 30px; right: 30px; z-index: 200; background: var(--sage-dark); color: white; padding: 16px 28px; border-radius: 50px; font-size: 14px; font-weight: 500; text-decoration: none; box-shadow: 0 8px 30px rgba(78,115,83,0.5); display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; animation: pulse 3s infinite; }
+  .float-rdv:hover { background: var(--sage); transform: scale(1.05); animation: none; }
+  .float-rdv:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+  @media (max-width: 900px) {
+    section { padding: 70px 24px; }
+    #about { grid-template-columns: 1fr; gap: 40px; }
+    .about-image-main { height: 340px; border-radius: 4px 40px 4px 40px; }
+    .about-text { padding-right: 0; }
+    .soins-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .consult-grid { grid-template-columns: 1fr; gap: 20px; }
+    .blog-grid { grid-template-columns: 1fr 1fr; }
+    .avis-header { flex-direction: column; align-items: flex-start; gap: 20px; padding: 70px 24px 40px; }
+    .avis-score { flex-direction: row; align-items: flex-start; gap: 16px; }
+    .avis-score-text { text-align: left; }
+    .avis-g-logo { margin-top: 4px; order: 1; }
+    .contact-grid { grid-template-columns: 1fr; }
+    #map-section { height: 260px; }
+    .float-rdv { bottom: 14px; right: 14px; left: 14px; justify-content: center; border-radius: 14px; }
+    footer { padding-bottom: 80px; }
+    #hero .hero-content { padding: 0 24px; }
+    #blog { padding: 60px 24px 110px; }
+    #contact { padding: 70px 24px 110px; }
+    #consultation { padding: 70px 24px 110px; }
+    #faq { padding: 70px 24px 110px; }
+  }
+  @media (max-width: 600px) {
+    .hero-title { font-size: 32px; }
+    .hero-subtitle { font-size: 15px; }
+    .hero-actions { flex-direction: column; }
+    .hero-actions a { text-align: center; justify-content: center; }
+    .soins-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    #avis { padding-bottom: 52px; }
+    .avis-header { padding: 52px 20px 36px; }
+    #map-section { height: 220px; }
+  }
+  @media (hover: none) {
+    .blog-mini-card:hover { box-shadow: none; transform: none; }
+    .blog-mini-card:hover .blog-mini-img { transform: none; }
+    .soin-card:hover { transform: none; box-shadow: none; }
+    .soin-card:hover .soin-image { transform: none; }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    }),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+</script>
