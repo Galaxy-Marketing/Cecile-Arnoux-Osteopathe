@@ -16,9 +16,15 @@ function useCounter(target: number, duration: number, start: boolean) {
   return count;
 }
 
-export default function StatsBar() {
+const labels = {
+  fr: { exp: "ans d'expérience", satis: 'patients satisfaits', reviews: 'Avis Google', care: 'Approche personnalisée' },
+  en: { exp: 'years of experience', satis: 'satisfied patients', reviews: 'Google Reviews', care: 'Personalised care' },
+};
+
+export default function StatsBar({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const t = labels[lang];
 
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -36,12 +42,12 @@ export default function StatsBar() {
     <div ref={ref} className="stats-bar">
       <div className="stat-item">
         <div className="stat-number">{exp}+</div>
-        <div className="stat-label">ans d'expérience</div>
+        <div className="stat-label">{t.exp}</div>
       </div>
       <div className="stat-divider" />
       <div className="stat-item">
         <div className="stat-number">{satis}%</div>
-        <div className="stat-label">patients satisfaits</div>
+        <div className="stat-label">{t.satis}</div>
       </div>
       <div className="stat-divider" />
       <div className="stat-item">
@@ -59,7 +65,7 @@ export default function StatsBar() {
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#half)"/>
           </svg>
         </div>
-        <div className="stat-label" style={{marginTop:'6px'}}>Avis Google</div>
+        <div className="stat-label" style={{marginTop:'6px'}}>{t.reviews}</div>
       </div>
       <div className="stat-divider" />
       <div className="stat-item">
@@ -68,7 +74,7 @@ export default function StatsBar() {
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
           </svg>
         </div>
-        <div className="stat-label" style={{marginTop:'8px'}}>Approche personnalisée</div>
+        <div className="stat-label" style={{marginTop:'8px'}}>{t.care}</div>
       </div>
       <style>{`
         .stats-bar {
