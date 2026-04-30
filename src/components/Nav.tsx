@@ -115,12 +115,12 @@ export default function Nav({ activePage, lang = 'fr' }: NavProps) {
               className={`lang-btn-mobile${lang === 'fr' ? ' active' : ''}`}
               onClick={() => { close(); switchTo('fr'); }}
               aria-pressed={lang === 'fr'}
-            >FR — Français</button>
+            >Français</button>
             <button
               className={`lang-btn-mobile${lang === 'en' ? ' active' : ''}`}
               onClick={() => { close(); switchTo('en'); }}
               aria-pressed={lang === 'en'}
-            >EN — English</button>
+            >English</button>
           </div>
         </div>
       </div>
