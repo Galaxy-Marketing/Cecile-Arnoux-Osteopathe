@@ -6,4 +6,11 @@ export default defineConfig({
   integrations: [react(), sitemap()],
   site: 'https://cecile-arnoux.com',
   output: 'static',
+  i18n: {
+    defaultLocale: 'fr',
+    locales: ['fr', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 });
