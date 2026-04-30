@@ -26,7 +26,7 @@ const questionsData = {
     },
     {
       q: "Do I need a referral to book an appointment?",
-      a: "No. Osteopathy is accessible without a medical prescription. You can book an appointment directly by phone. If you are currently under medical supervision, it is helpful to mention this to Cécile at the start of your consultation.",
+      a: "No. Osteopathy is accessible without a GP referral. You can book an appointment directly by phone. If you are currently under medical care, it is helpful to let Cécile know at the start of your consultation.",
     },
     {
       q: "Is osteopathy covered by insurance?",
