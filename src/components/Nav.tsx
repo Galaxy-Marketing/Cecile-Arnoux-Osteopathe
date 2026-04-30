@@ -43,10 +43,11 @@ export default function Nav({ activePage, lang = 'fr' }: NavProps) {
 
   const close = () => setMenuOpen(false);
 
-  const handleLangSwitch = () => {
+  const switchTo = (target: 'fr' | 'en') => {
+    if (target === lang) return;
     const path = window.location.pathname;
     const normalised = path.endsWith('/') ? path : path + '/';
-    if (lang === 'fr') {
+    if (target === 'en') {
       window.location.href = frToEn[normalised] ?? '/en/';
     } else {
       window.location.href = enToFr[normalised] ?? '/';
@@ -57,8 +58,8 @@ export default function Nav({ activePage, lang = 'fr' }: NavProps) {
   const blogHref = lang === 'en' ? '/en/blog/' : '/blog/';
 
   const t = lang === 'en'
-    ? { about: 'About', consult: 'Consultations', reviews: 'Reviews', rdv: 'Book Appointment' }
-    : { about: 'À propos', consult: 'Consultations', reviews: 'Avis', rdv: 'Prendre RDV' };
+    ? { about: 'About', consult: 'Consultations', reviews: 'Reviews', firstVisit: 'First visit', rdv: 'Book Appointment' }
+    : { about: 'À propos', consult: 'Consultations', reviews: 'Avis', firstVisit: 'Première visite', rdv: 'Prendre RDV' };
 
   return (
     <>
@@ -72,9 +73,20 @@ export default function Nav({ activePage, lang = 'fr' }: NavProps) {
           <li><a href={base + '/#contact'} className="nav-cta">{t.rdv}</a></li>
         </ul>
         <div className="nav-right">
-          <button className="lang-switch" onClick={handleLangSwitch} aria-label="Switch language">
-            {lang === 'fr' ? 'EN' : 'FR'}
-          </button>
+          <div className="lang-switcher" role="group" aria-label="Language">
+            <button
+              className={`lang-btn${lang === 'fr' ? ' active' : ''}`}
+              onClick={() => switchTo('fr')}
+              aria-pressed={lang === 'fr'}
+              aria-label="Français"
+            >FR</button>
+            <button
+              className={`lang-btn${lang === 'en' ? ' active' : ''}`}
+              onClick={() => switchTo('en')}
+              aria-pressed={lang === 'en'}
+              aria-label="English"
+            >EN</button>
+          </div>
           <button
             className="hamburger"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -96,33 +108,61 @@ export default function Nav({ activePage, lang = 'fr' }: NavProps) {
             <li><a href={base + '/#consultations'} onClick={close}>{t.consult}</a></li>
             <li><a href={base + '/#avis'} onClick={close}>{t.reviews}</a></li>
             <li><a href={blogHref} onClick={close}>Blog</a></li>
-            <li><a href={`tel:0254670326`} onClick={close} className="mobile-cta">{t.rdv}</a></li>
+            <li><a href="tel:0254670326" onClick={close} className="mobile-cta">{t.rdv}</a></li>
           </ul>
-          <button className="lang-switch-mobile" onClick={handleLangSwitch}>
-            {lang === 'fr' ? '🌐 English' : '🌐 Français'}
-          </button>
+          <div className="lang-switcher-mobile" role="group" aria-label="Language">
+            <button
+              className={`lang-btn-mobile${lang === 'fr' ? ' active' : ''}`}
+              onClick={() => { close(); switchTo('fr'); }}
+              aria-pressed={lang === 'fr'}
+            >FR — Français</button>
+            <button
+              className={`lang-btn-mobile${lang === 'en' ? ' active' : ''}`}
+              onClick={() => { close(); switchTo('en'); }}
+              aria-pressed={lang === 'en'}
+            >EN — English</button>
+          </div>
         </div>
       </div>
 
       <style>{`
         .nav-right {
-          display: flex; align-items: center; gap: 8px;
+          display: flex; align-items: center; gap: 12px;
         }
-        .lang-switch {
-          background: rgba(122,158,126,0.12); border: 1px solid rgba(122,158,126,0.3);
-          color: var(--sage-dark); font-size: 12px; font-weight: 700;
-          letter-spacing: 0.08em; padding: 6px 14px; border-radius: 50px;
-          cursor: pointer; transition: all 0.2s; white-space: nowrap;
-          font-family: inherit;
+        .lang-switcher {
+          display: flex; border: 1.5px solid rgba(122,158,126,0.35);
+          border-radius: 50px; overflow: hidden; flex-shrink: 0;
         }
-        .lang-switch:hover { background: var(--sage); color: white; border-color: var(--sage); }
-        .lang-switch-mobile {
-          margin-top: 20px; background: rgba(122,158,126,0.1);
-          border: 1px solid rgba(122,158,126,0.3); color: var(--sage-dark);
-          font-size: 14px; padding: 12px 20px; border-radius: 50px;
-          cursor: pointer; width: 100%; font-family: inherit; transition: all 0.2s;
+        .lang-btn {
+          background: none; border: none; cursor: pointer;
+          font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+          padding: 6px 13px; font-family: inherit; color: var(--sage-dark);
+          transition: background 0.2s, color 0.2s;
+          line-height: 1;
         }
-        .lang-switch-mobile:hover { background: var(--sage); color: white; }
+        .lang-btn.active {
+          background: var(--sage); color: white; cursor: default;
+        }
+        .lang-btn:not(.active):hover {
+          background: rgba(122,158,126,0.12);
+        }
+        .lang-switcher-mobile {
+          margin-top: 20px; display: flex; gap: 8px;
+        }
+        .lang-btn-mobile {
+          flex: 1; padding: 12px 8px; border-radius: 50px; font-family: inherit;
+          font-size: 13px; font-weight: 600; cursor: pointer;
+          background: rgba(122,158,126,0.08);
+          border: 1.5px solid rgba(122,158,126,0.25);
+          color: var(--sage-dark); transition: all 0.2s;
+        }
+        .lang-btn-mobile.active {
+          background: var(--sage); color: white;
+          border-color: var(--sage); cursor: default;
+        }
+        .lang-btn-mobile:not(.active):hover {
+          background: rgba(122,158,126,0.15);
+        }
         .hamburger {
           display: none; flex-direction: column; justify-content: center; align-items: center;
           gap: 5px; background: none; border: none; cursor: pointer;
@@ -139,8 +179,7 @@ export default function Nav({ activePage, lang = 'fr' }: NavProps) {
         .bar.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
         .mobile-menu {
           display: none; position: fixed; inset: 0; z-index: 200;
-          background: rgba(0,0,0,0.5); opacity: 0;
-          visibility: hidden;
+          background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden;
           transition: opacity 0.3s, visibility 0.3s;
         }
         .mobile-menu.open { opacity: 1; visibility: visible; }
@@ -149,6 +188,7 @@ export default function Nav({ activePage, lang = 'fr' }: NavProps) {
           width: min(320px, 85vw);
           background: var(--warm-white); padding: 80px 32px 40px;
           display: flex; flex-direction: column; gap: 8px;
+          overflow-y: auto;
         }
         .mobile-close {
           position: absolute; top: 20px; right: 20px;
@@ -168,7 +208,7 @@ export default function Nav({ activePage, lang = 'fr' }: NavProps) {
         }
         @media (max-width: 900px) {
           .nav-links { display: none; }
-          .lang-switch { display: none; }
+          .lang-switcher { display: none; }
           .hamburger { display: flex; }
           .mobile-menu { display: block; }
         }
