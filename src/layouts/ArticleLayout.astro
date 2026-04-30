@@ -16,6 +16,9 @@ interface Props {
   ctaDesc: string;
   backLabel?: string;
   backHref?: string;
+  lang?: 'fr' | 'en';
+  hreflangFr?: string;
+  hreflangEn?: string;
 }
 
 const {
@@ -31,26 +34,33 @@ const {
   ctaDesc,
   backLabel = 'Retour au blog',
   backHref = '/blog/',
+  lang = 'fr',
+  hreflangFr,
+  hreflangEn,
 } = Astro.props;
+
+const homeLabel = lang === 'en' ? 'Home' : 'Accueil';
+const homeHref = lang === 'en' ? '/en/' : '/';
+const blogHref = lang === 'en' ? '/en/blog/' : '/blog/';
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.cecile-arnoux.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.cecile-arnoux.com/blog/' },
+    { '@type': 'ListItem', position: 1, name: homeLabel, item: 'https://www.cecile-arnoux.com' + homeHref },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.cecile-arnoux.com' + blogHref },
     { '@type': 'ListItem', position: 3, name: breadcrumb, item: canonical },
   ],
 };
 ---
 
-<BaseLayout {title} {description} {canonical}>
+<BaseLayout {title} {description} {canonical} {lang} {hreflangFr} {hreflangEn}>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  <Nav client:load />
+  <Nav lang={lang} client:load />
 
   <article>
     <div class="breadcrumb">
-      <a href="/">Accueil</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; {breadcrumb}
+      <a href={homeHref}>{homeLabel}</a> &rsaquo; <a href={blogHref}>Blog</a> &rsaquo; {breadcrumb}
     </div>
     <span class="article-tag">{tag}</span>
     <h1>{h1}</h1>
