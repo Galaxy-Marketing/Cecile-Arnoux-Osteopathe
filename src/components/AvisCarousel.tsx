@@ -1,9 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 
-const avis = [
-  { name: "Mika D.", stars: 5, text: "Suite a des probl\u00e8me digestif j\u2019ai \u00e9t\u00e9 voir cette \u00e9thiopathe et depuis c\u2019est redevenu comme avant ..merci \u00e0 vous \ud83d\ude0a\ud83d\ude0a\ud83d\ude0a" },
-  { name: "Marie France L.", stars: 5, text: "Tr\u00e8s bon ost\u00e9opathe \u00e9thiopathe \u00e0 l\u2019\u00e9coute de ses patients. Salle d\u2019attente reposante, musique relaxante." },
+const avisFR = [
+  { name: "Mika D.", stars: 5, text: "Suite a des probl\u00e8me digestif j'ai \u00e9t\u00e9 voir cette ost\u00e9opathe et depuis c'est redevenu comme avant ..merci \u00e0 vous \ud83d\ude0a\ud83d\ude0a\ud83d\ude0a" },
+  { name: "Marie France L.", stars: 5, text: "Tr\u00e8s bon ost\u00e9opathe \u00e0 l'\u00e9coute de ses patients. Salle d'attente reposante, musique relaxante." },
   { name: "Cyril B.", stars: 5, text: "En ce qui me concerne 1 s\u00e9ance pour un mal de dos qui me tenait depuis 1 mois." },
+];
+
+const avisEN = [
+  { name: "Mika D.", stars: 5, text: "After experiencing digestive problems, I visited this osteopath and things have been back to normal since... Thank you so much! \ud83d\ude0a" },
+  { name: "Marie France L.", stars: 5, text: "Excellent osteopath, very attentive to her patients. Relaxing waiting room with soothing music." },
+  { name: "Cyril B.", stars: 5, text: "In my case, just one session resolved a back pain that had been with me for over a month." },
 ];
 
 function Stars({ n }: { n: number }) {
@@ -18,7 +24,8 @@ function Stars({ n }: { n: number }) {
   );
 }
 
-export default function AvisCarousel() {
+export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
+  const avis = lang === 'en' ? avisEN : avisFR;
   const trackRef = useRef<HTMLDivElement>(null);
   const mobileTrackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);

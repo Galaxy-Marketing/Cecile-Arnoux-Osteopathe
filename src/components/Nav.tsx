@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 
 interface NavProps {
   activePage?: 'home' | 'blog';
+  lang?: 'fr' | 'en';
 }
 
-export default function Nav({ activePage }: NavProps) {
+export default function Nav({ activePage, lang = 'fr' }: NavProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -36,7 +37,8 @@ export default function Nav({ activePage }: NavProps) {
           <li><a href="/#consultations">Consultations</a></li>
           <li><a href="/#avis">Avis</a></li>
           <li><a href="/blog/" className={activePage === 'blog' ? 'active' : ''}>Blog</a></li>
-          <li><a href="/#contact" className="nav-cta">Prendre RDV</a></li>
+          <li><a href="/#contact" className="nav-cta">{lang === 'en' ? 'Book' : 'Prendre RDV'}</a></li>
+          <li><a href={lang === 'en' ? '/' : '/en/'} className="nav-lang">{lang === 'en' ? 'FR' : 'EN'}</a></li>
         </ul>
         <button
           className="hamburger"
@@ -58,12 +60,21 @@ export default function Nav({ activePage }: NavProps) {
             <li><a href="/#consultations" onClick={close}>Consultations</a></li>
             <li><a href="/#avis" onClick={close}>Avis</a></li>
             <li><a href="/blog/" onClick={close}>Blog</a></li>
-            <li><a href="tel:0254670326" onClick={close} className="mobile-cta">Prendre RDV</a></li>
+            <li><a href="tel:0254670326" onClick={close} className="mobile-cta">{lang === 'en' ? 'Book an appointment' : 'Prendre RDV'}</a></li>
+          <li><a href={lang === 'en' ? '/' : '/en/'} onClick={close} className="mobile-lang">{lang === 'en' ? '🇫🇷 Français' : '🇬🇧 English'}</a></li>
           </ul>
         </div>
       </div>
 
       <style>{`
+        .nav-lang {
+          font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+          color: var(--sage-dark) !important; border: 1px solid var(--sage-dark);
+          padding: 5px 10px; border-radius: 20px; text-decoration: none !important;
+          transition: background 0.2s, color 0.2s;
+        }
+        .nav-lang:hover { background: var(--sage-dark); color: white !important; }
+        .mobile-lang { font-size: 15px; color: var(--sage-dark) !important; font-weight: 600; }
         .hamburger {
           display: none; flex-direction: column; justify-content: center; align-items: center;
           gap: 5px; background: none; border: none; cursor: pointer;

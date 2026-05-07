@@ -1,50 +1,50 @@
 ---
 import { Image } from 'astro:assets';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Nav from '../components/Nav';
-import StatsBar from '../components/StatsBar';
-import FAQ from '../components/FAQ';
-import AvisCarousel from '../components/AvisCarousel';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav';
+import StatsBar from '../../components/StatsBar';
+import FAQ from '../../components/FAQ';
+import AvisCarousel from '../../components/AvisCarousel';
 
-import heroImg from '../assets/images/hero.jpg';
-import aboutImg from '../assets/images/img2.png';
-import soinDosImg from '../assets/images/soin-dos.jpg';
-import sportifImg from '../assets/images/sportif.jpg';
-import soinNourrImg from '../assets/images/soin-nourrisson.jpg';
-import grossesseImg from '../assets/images/grossesse.jpg';
-import migraineImg from '../assets/images/migraine.jpg';
-import digestifImg from '../assets/images/digestif.jpg';
-import dosImg from '../assets/images/dos.jpg';
-import nourrImg from '../assets/images/nourrisson.jpg';
+import heroImg from '../../assets/images/hero.jpg';
+import aboutImg from '../../assets/images/img2.png';
+import soinDosImg from '../../assets/images/soin-dos.jpg';
+import sportifImg from '../../assets/images/sportif.jpg';
+import soinNourrImg from '../../assets/images/soin-nourrisson.jpg';
+import grossesseImg from '../../assets/images/grossesse.jpg';
+import migraineImg from '../../assets/images/migraine.jpg';
+import digestifImg from '../../assets/images/digestif.jpg';
+import dosImg from '../../assets/images/dos.jpg';
+import nourrImg from '../../assets/images/nourrisson.jpg';
 ---
 
 <BaseLayout
-  title="Cécile Arnoux - Ostéopathe à Vendôme"
-  description="Cécile Arnoux, ostéopathe D.O. à Vendôme (41100). Consultation sur rendez-vous au cabinet, 1 rue des États-Unis d'Amérique. Appelez le 02 54 67 03 26."
-  canonical="https://www.cecile-arnoux.com/"
+  title="Cécile Arnoux - Osteopath in Vendôme"
+  description="Cécile Arnoux, osteopath D.O. in Vendôme (41100). Appointments available at the practice, 1 rue des États-Unis d'Amérique. Call 02 54 67 03 26."
+  canonical="https://www.cecile-arnoux.com/en/"
 >
-  <Nav client:load />
+  <Nav client:load lang="en" />
 
   <!-- HERO -->
-  <section id="hero" aria-label="Présentation du cabinet">
+  <section id="hero" aria-label="Practice presentation">
     <div class="hero-bg">
-      <Image src={heroImg} alt="Cabinet ostéopathie Vendôme" width={1920} height={1080} loading="eager" class="hero-img" />
+      <Image src={heroImg} alt="Osteopathy practice Vendôme" width={1920} height={1080} loading="eager" class="hero-img" />
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-badge">Ostéopathe D.O. — Vendôme</div>
-      <div class="hero-specialty">Approche intégrative en thérapie manuelle</div>
-      <h1 class="hero-title">Retrouvez <em>l'équilibre</em><br>et libérez vos douleurs</h1>
+      <div class="hero-badge">Osteopath D.O. — Vendôme</div>
+      <div class="hero-specialty">Integrative Manual Therapy Approach</div>
+      <h1 class="hero-title">Restore <em>balance</em><br>and free yourself from pain</h1>
       <p class="hero-subtitle">
-        Une approche douce et personnalisée pour soulager vos douleurs,
-        améliorer votre mobilité et vous accompagner vers un mieux-être durable.
+        A gentle, personalised approach to relieve your pain,
+        improve your mobility and guide you towards lasting well-being.
       </p>
       <div class="hero-actions">
         <a href="tel:0254670326" class="btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           02 54 67 03 26
         </a>
-        <a href="#consultations" class="btn-secondary">Découvrir les consultations</a>
+        <a href="#consultations" class="btn-secondary">Discover consultations</a>
       </div>
     </div>
   </section>
@@ -52,30 +52,29 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   <!-- STATS -->
   <StatsBar client:load />
 
-  <!-- À PROPOS -->
+  <!-- ABOUT -->
   <section id="about">
     <div class="about-image-wrap reveal-left">
-      <Image src={aboutImg} alt="Cécile Arnoux ostéopathe à Vendôme" width={800} height={600} class="about-image-main" loading="lazy" />
+      <Image src={aboutImg} alt="Cécile Arnoux osteopath in Vendôme" width={800} height={600} class="about-image-main" loading="lazy" />
     </div>
     <div class="about-text reveal-right">
-      <div class="section-label">À propos</div>
-      <h2 class="section-title">Cécile Arnoux,<br><em>ostéopathe D.O.</em></h2>
+      <div class="section-label">About</div>
+      <h2 class="section-title">Cécile Arnoux,<br><em>Osteopath D.O.</em></h2>
       <p class="section-desc">
-        Diplômée en ostéopathie et en étiopathie, Cécile Arnoux exerce à Vendôme
-        depuis plus de 24 ans avec une approche centrée sur l'écoute et la recherche
-        de la cause réelle de chaque douleur.
+        Cécile Arnoux is an experienced osteopath with over 24 years of clinical practice
+        in Vendôme, offering an integrative and patient-centered manual therapy approach.
       </p>
       <p>
-        L'ostéopathie lui permet d'aborder le corps dans sa globalité, en traitant les causes plutôt que les symptômes.
-        L'étiopathie vient compléter cette approche avec une précision mécanique : identifier l'origine exacte du problème et le corriger durablement.
+        Her clinical reasoning is informed by an extensive experience in osteopathy,
+        manual therapy and previous training in etiopathy.
       </p>
       <p>
-        Elle reçoit les patients de tous âges, nourrissons, sportifs, femmes enceintes
-        et seniors, avec la même attention et le même engagement pour leur bien-être.
+        She welcomes patients of all ages — infants, athletes, pregnant women and seniors —
+        with the same dedication, always focused on helping restore long-term balance and function.
       </p>
       <div class="about-diplomes">
-        <div class="diplome-item"><div class="diplome-dot"></div>Diplôme d'Ostéopathie (D.O.)</div>
-        <div class="diplome-item"><div class="diplome-dot"></div>Diplôme d'Étiopathie</div>
+        <div class="diplome-item"><div class="diplome-dot"></div>Diploma in Osteopathy (D.O.)</div>
+        <div class="diplome-item"><div class="diplome-dot"></div>Training in Etiopathy</div>
       </div>
       <div class="about-signature">Cécile Arnoux</div>
     </div>
@@ -85,127 +84,127 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   <section id="consultations" aria-label="Consultations">
     <div class="reveal" style="text-align:center">
       <div class="section-label">Consultations</div>
-      <h2 class="section-title">Une prise en charge<br><em>complète et personnalisée</em></h2>
+      <h2 class="section-title">Comprehensive and<br><em>personalised care</em></h2>
     </div>
     <div class="soins-grid">
       <div class="soin-card reveal">
         <div class="soin-img-wrap">
-          <Image src={soinDosImg} alt="Mal de dos ostéopathie" width={600} height={400} class="soin-image" loading="lazy" />
+          <Image src={soinDosImg} alt="Back pain osteopathy" width={600} height={400} class="soin-image" loading="lazy" />
         </div>
         <div class="soin-body">
-          <h3 class="soin-title">Douleurs du dos</h3>
-          <p class="soin-desc">Lombalgie, sciatique, hernie discale, scoliose… Des manipulations précises et douces pour soulager rapidement et durablement vos douleurs vertébrales.</p>
-          <span class="soin-tag">Colonne vertébrale</span>
+          <h3 class="soin-title">Back Pain</h3>
+          <p class="soin-desc">Lower back pain, sciatica, herniated disc, scoliosis… Precise, gentle manipulations to quickly and lastingly relieve your spinal pain.</p>
+          <span class="soin-tag">Spine</span>
         </div>
       </div>
       <div class="soin-card reveal" style="transition-delay:0.1s">
         <div class="soin-img-wrap">
-          <Image src={sportifImg} alt="Ostéopathie sportive tendinite" width={600} height={400} class="soin-image" loading="lazy" />
+          <Image src={sportifImg} alt="Sports osteopathy tendinitis" width={600} height={400} class="soin-image" loading="lazy" />
         </div>
         <div class="soin-body">
-          <h3 class="soin-title">Sportifs & Tendinites</h3>
-          <p class="soin-desc">Tendinite, entorse, prévention des blessures, optimisation des performances. Un suivi adapté à vos contraintes sportives pour récupérer et progresser.</p>
+          <h3 class="soin-title">Athletes & Tendinitis</h3>
+          <p class="soin-desc">Tendinitis, sprains, injury prevention, performance optimisation. A tailored follow-up to help you recover and progress.</p>
           <span class="soin-tag">Sport & Performance</span>
         </div>
       </div>
       <div class="soin-card reveal" style="transition-delay:0.2s">
         <div class="soin-img-wrap">
-          <Image src={soinNourrImg} alt="Ostéopathie nourrissons enfants" width={600} height={400} class="soin-image" loading="lazy" />
+          <Image src={soinNourrImg} alt="Osteopathy infants children" width={600} height={400} class="soin-image" loading="lazy" />
         </div>
         <div class="soin-body">
-          <h3 class="soin-title">Nourrissons & Enfants</h3>
-          <p class="soin-desc">Troubles du sommeil, coliques, torticolis du nourrisson, plagiocéphalie. Une approche ultra-douce et sécurisée dès les premiers jours de vie.</p>
-          <span class="soin-tag">Pédiatrie</span>
+          <h3 class="soin-title">Infants & Children</h3>
+          <p class="soin-desc">Sleep disorders, colic, infant torticollis, plagiocephaly. An ultra-gentle, safe approach from the very first days of life.</p>
+          <span class="soin-tag">Paediatrics</span>
         </div>
       </div>
       <div class="soin-card reveal" style="transition-delay:0.1s">
         <div class="soin-img-wrap">
-          <Image src={grossesseImg} alt="Ostéopathie grossesse" width={600} height={400} class="soin-image" loading="lazy" />
+          <Image src={grossesseImg} alt="Osteopathy pregnancy" width={600} height={400} class="soin-image" loading="lazy" />
         </div>
         <div class="soin-body">
-          <h3 class="soin-title">Grossesse & Post-partum</h3>
-          <p class="soin-desc">Douleurs pelviennes, pubalgies, préparation à l'accouchement, récupération post-natale. Un accompagnement en douceur à chaque étape de votre maternité.</p>
-          <span class="soin-tag">Maternité</span>
+          <h3 class="soin-title">Pregnancy & Postpartum</h3>
+          <p class="soin-desc">Pelvic pain, pubic symphysis, birth preparation, postnatal recovery. Gentle support at every stage of your maternity journey.</p>
+          <span class="soin-tag">Maternity</span>
         </div>
       </div>
       <div class="soin-card reveal" style="transition-delay:0.2s">
         <div class="soin-img-wrap">
-          <Image src={migraineImg} alt="Céphalées migraines ostéopathie" width={600} height={400} class="soin-image" loading="lazy" />
+          <Image src={migraineImg} alt="Headaches migraines osteopathy" width={600} height={400} class="soin-image" loading="lazy" />
         </div>
         <div class="soin-body">
-          <h3 class="soin-title">Céphalées, ORL & Migraines</h3>
-          <p class="soin-desc">Maux de tête, migraines, vertiges, sinusites chroniques, rhinites, otites séreuses. Des techniques crâniennes et cervicales ciblées pour soulager à la source.</p>
-          <span class="soin-tag">Crânien & ORL</span>
+          <h3 class="soin-title">Headaches, ENT & Migraines</h3>
+          <p class="soin-desc">Headaches, migraines, vertigo, chronic sinusitis, rhinitis, serous otitis. Targeted cranial and cervical techniques to relieve at the source.</p>
+          <span class="soin-tag">Cranial & ENT</span>
         </div>
       </div>
       <div class="soin-card reveal" style="transition-delay:0.3s">
         <div class="soin-img-wrap">
-          <Image src={digestifImg} alt="Troubles digestifs ostéopathie" width={600} height={400} class="soin-image" loading="lazy" />
+          <Image src={digestifImg} alt="Digestive disorders osteopathy" width={600} height={400} class="soin-image" loading="lazy" />
         </div>
         <div class="soin-body">
-          <h3 class="soin-title">Troubles digestifs & Viscéraux</h3>
-          <p class="soin-desc">Constipation, ballonnements, reflux (RGO), colopathie fonctionnelle, digestions difficiles. L'ostéopathie et l'étiopathie agissent sur les tensions viscérales et circulatoires.</p>
-          <span class="soin-tag">Système digestif</span>
+          <h3 class="soin-title">Digestive & Visceral Disorders</h3>
+          <p class="soin-desc">Constipation, bloating, reflux (GERD), irritable bowel syndrome, difficult digestion. Osteopathy acts on visceral and circulatory tension.</p>
+          <span class="soin-tag">Digestive system</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PREMIÈRE VISITE -->
+  <!-- FIRST VISIT -->
   <section id="consultation" class="bg-cream">
     <div class="reveal" style="text-align:center;margin-bottom:44px">
-      <div class="section-label">Votre première visite</div>
-      <h2 class="section-title">Comment se déroule<br><em>une consultation ?</em></h2>
+      <div class="section-label">Your first visit</div>
+      <h2 class="section-title">What does<br><em>a consultation involve?</em></h2>
     </div>
     <div class="consult-grid">
       <div class="consult-step reveal">
         <div class="step-num">01</div>
-        <h3 class="step-title">Bilan & écoute</h3>
-        <p class="step-desc">La séance débute par un entretien complet : douleurs, historique médical, habitudes de vie. Cécile prend le temps de comprendre votre situation avant tout geste.</p>
+        <h3 class="step-title">Assessment & listening</h3>
+        <p class="step-desc">The session begins with a thorough interview: pain, medical history, lifestyle. Cécile takes the time to understand your situation before any treatment.</p>
       </div>
       <div class="consult-step reveal" style="transition-delay:0.15s">
         <div class="step-num">02</div>
-        <h3 class="step-title">Traitement manuel</h3>
-        <p class="step-desc">Des techniques manuelles douces et précises, adaptées à chaque patient. L'approche est choisie selon votre corps, votre douleur et votre confort.</p>
+        <h3 class="step-title">Manual treatment</h3>
+        <p class="step-desc">Gentle, precise manual techniques tailored to each patient. The approach is chosen according to your body, your pain and your comfort.</p>
       </div>
       <div class="consult-step reveal" style="transition-delay:0.3s">
         <div class="step-num">03</div>
-        <h3 class="step-title">Conseils personnalisés</h3>
-        <p class="step-desc">En fin de séance, votre ostéopathe transmet des recommandations concrètes : posture, exercices, hygiène de vie, pour prolonger les bénéfices du traitement au quotidien.</p>
+        <h3 class="step-title">Personalised advice</h3>
+        <p class="step-desc">At the end of the session, practical recommendations are provided: posture, exercises, lifestyle advice to extend the benefits of treatment in daily life.</p>
       </div>
     </div>
     <div class="reveal" style="text-align:center;margin-top:52px">
       <a href="tel:0254670326" class="btn-primary">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        Appeler pour prendre rendez-vous : 02 54 67 03 26
+        Call to book an appointment: 02 54 67 03 26
       </a>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" aria-label="Questions fréquentes">
+  <section id="faq" aria-label="Frequently asked questions">
     <div class="reveal" style="text-align:center;margin-bottom:56px">
-      <div class="section-label">Questions fréquentes</div>
-      <h2 class="section-title">Ce que vous <em>vous demandez</em></h2>
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Questions you <em>may have</em></h2>
     </div>
     <FAQ client:load />
     <div class="reveal" style="text-align:center;margin-top:56px">
-      <div class="faq-blog-hint">Envie d'en savoir plus ?</div>
-      <a href="/blog/" class="btn-primary">Lire tous les articles</a>
+      <div class="faq-blog-hint">Want to know more?</div>
+      <a href="/blog/" class="btn-primary">Read all articles</a>
     </div>
   </section>
 
-  <!-- AVIS -->
-  <section id="avis" aria-label="Témoignages patients">
+  <!-- REVIEWS -->
+  <section id="avis" aria-label="Patient testimonials">
     <div class="avis-header">
       <div class="reveal">
-        <div class="section-label">Témoignages</div>
-        <h2 class="section-title">Ce que disent<br><em>mes patients</em></h2>
+        <div class="section-label">Testimonials</div>
+        <h2 class="section-title">What my<br><em>patients say</em></h2>
       </div>
       <div class="avis-score reveal">
         <div class="avis-score-text">
           <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;<span class="half-star-wrap">&#9733;</span></div>
-          <div class="avis-count">Avis Google</div>
+          <div class="avis-count">Google Reviews</div>
         </div>
         <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="avis-g-logo" aria-hidden="true">
           <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -215,52 +214,52 @@ import nourrImg from '../assets/images/nourrisson.jpg';
         </svg>
       </div>
     </div>
-    <AvisCarousel client:load />
+    <AvisCarousel client:load lang="en" />
   </section>
 
   <!-- BLOG -->
   <section id="blog" class="bg-white">
     <div class="reveal" style="text-align:center;margin-bottom:48px">
-      <div class="section-label">Le blog</div>
-      <h2 class="section-title">Conseils & <em>articles santé</em></h2>
+      <div class="section-label">Blog</div>
+      <h2 class="section-title">Tips & <em>health articles</em></h2>
     </div>
     <div class="blog-grid">
       <a href="/blog/mal-de-dos/" class="blog-mini-card reveal">
         <div class="blog-mini-img-wrap">
-          <Image src={dosImg} alt="Mal de dos ostéopathie" width={600} height={400} class="blog-mini-img" loading="lazy" />
+          <Image src={dosImg} alt="Back pain osteopathy" width={600} height={400} class="blog-mini-img" loading="lazy" />
         </div>
         <div class="blog-mini-body">
-          <div class="blog-mini-tag">Colonne vertébrale</div>
-          <h3>Mal de dos : quand consulter un ostéopathe ?</h3>
-          <p>Lombalgie, sciatique, tensions cervicales… Comment l'ostéopathie peut soulager durablement vos douleurs vertébrales.</p>
-          <div class="blog-mini-link">Lire l'article →</div>
+          <div class="blog-mini-tag">Spine</div>
+          <h3>Back pain: when should you see an osteopath?</h3>
+          <p>Lower back pain, sciatica, neck tension… How osteopathy can provide lasting relief from spinal pain.</p>
+          <div class="blog-mini-link">Read article →</div>
         </div>
       </a>
       <a href="/blog/nourrisson/" class="blog-mini-card reveal" style="transition-delay:0.1s">
         <div class="blog-mini-img-wrap">
-          <Image src={nourrImg} alt="Ostéopathie nourrisson" width={600} height={400} class="blog-mini-img" loading="lazy" />
+          <Image src={nourrImg} alt="Infant osteopathy" width={600} height={400} class="blog-mini-img" loading="lazy" />
         </div>
         <div class="blog-mini-body">
-          <div class="blog-mini-tag">Pédiatrie</div>
-          <h3>Ostéopathie nourrisson : coliques, torticolis, sommeil</h3>
-          <p>Dès les premiers jours de vie, l'ostéopathie peut aider votre bébé avec des techniques ultra-douces.</p>
-          <div class="blog-mini-link">Lire l'article →</div>
+          <div class="blog-mini-tag">Paediatrics</div>
+          <h3>Infant osteopathy: colic, torticollis, sleep</h3>
+          <p>From the very first days of life, osteopathy can help your baby with ultra-gentle techniques.</p>
+          <div class="blog-mini-link">Read article →</div>
         </div>
       </a>
       <a href="/blog/grossesse/" class="blog-mini-card reveal" style="transition-delay:0.2s">
         <div class="blog-mini-img-wrap">
-          <Image src={grossesseImg} alt="Ostéopathie grossesse" width={600} height={400} class="blog-mini-img" loading="lazy" />
+          <Image src={grossesseImg} alt="Osteopathy pregnancy" width={600} height={400} class="blog-mini-img" loading="lazy" />
         </div>
         <div class="blog-mini-body">
-          <div class="blog-mini-tag">Grossesse</div>
-          <h3>Ostéopathie & grossesse : douleurs pelviennes et lombaires</h3>
-          <p>Un accompagnement doux et sécurisé tout au long de la grossesse pour soulager les douleurs.</p>
-          <div class="blog-mini-link">Lire l'article →</div>
+          <div class="blog-mini-tag">Pregnancy</div>
+          <h3>Osteopathy & pregnancy: pelvic and lower back pain</h3>
+          <p>Gentle, safe support throughout pregnancy to relieve pain.</p>
+          <div class="blog-mini-link">Read article →</div>
         </div>
       </a>
     </div>
     <div class="reveal" style="text-align:center;margin-top:44px">
-      <a href="/blog/" class="btn-primary">Voir tous les articles</a>
+      <a href="/blog/" class="btn-primary">View all articles</a>
     </div>
   </section>
 
@@ -268,25 +267,25 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   <section id="contact" class="bg-cream">
     <div class="reveal" style="text-align:center;margin-bottom:60px">
       <div class="section-label">Contact</div>
-      <h2 class="section-title">Prendre <em>rendez-vous</em></h2>
+      <h2 class="section-title">Book an <em>appointment</em></h2>
     </div>
     <div class="contact-grid reveal">
       <div class="contact-info-col">
         <div class="contact-card">
-          <div class="contact-card-label">Adresse du cabinet</div>
+          <div class="contact-card-label">Practice address</div>
           <div class="contact-card-address">1 rue des États-Unis d'Amérique<br>41100 Vendôme</div>
-          <div class="contact-card-note">À côté du Pré aux Chats · Parking à proximité</div>
+          <div class="contact-card-note">Next to Pré aux Chats · Parking nearby</div>
         </div>
         <div class="contact-card">
-          <div class="contact-card-label">Horaires de prise de rendez-vous</div>
+          <div class="contact-card-label">Appointment hours</div>
           <div class="horaires">
             <div class="horaire-row">
-              <span>Lun – Ven</span>
-              <span class="horaire-val">8h – 19h</span>
+              <span>Mon – Fri</span>
+              <span class="horaire-val">8am – 7pm</span>
             </div>
             <div class="horaire-row">
-              <span>Samedi</span>
-              <span class="horaire-val">8h – 12h</span>
+              <span>Saturday</span>
+              <span class="horaire-val">8am – 12pm</span>
             </div>
           </div>
         </div>
@@ -295,9 +294,9 @@ import nourrImg from '../assets/images/nourrisson.jpg';
         <div class="contact-phone-icon">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         </div>
-        <div class="contact-phone-label">Prendre rendez-vous</div>
+        <div class="contact-phone-label">Book an appointment</div>
         <div class="contact-phone-number">02 54 67 03 26</div>
-        <div class="contact-phone-note">Pas de formulaire, pas d'attente.<br>Un appel suffit.</div>
+        <div class="contact-phone-note">No form, no waiting.<br>One call is all it takes.</div>
       </a>
     </div>
   </section>
@@ -305,11 +304,11 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   <!-- MAP -->
   <div id="map-section">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5360.745871010469!2d1.057390177133228!3d47.79360607504419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e36a4a2152f64b%3A0x4eeff7b51c5c9473!2sArnoux%20C%C3%A9cile!5e0!3m2!1sfr!2sfr!4v1776932777093!5m2!1sfr!2sfr"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5360.745871010469!2d1.057390177133228!3d47.79360607504419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e36a4a2152f64b%3A0x4eeff7b51c5c9473!2sArnoux%20C%C3%A9cile!5e0!3m2!1sen!2sfr!4v1776932777093!5m2!1sen!2sfr"
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
-      title="Cabinet Cécile Arnoux Ostéopathe Vendôme">
+      title="Cécile Arnoux Osteopath practice Vendôme">
     </iframe>
   </div>
 
@@ -317,20 +316,20 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   <footer>
     <div class="footer-grid">
       <div>
-        <div class="footer-brand-name">Cécile Arnoux — Ostéopathe D.O.</div>
+        <div class="footer-brand-name">Cécile Arnoux — Osteopath D.O.</div>
         <div class="footer-brand-desc">
-          Cabinet d'ostéopathie à Vendôme<br>
+          Osteopathy practice in Vendôme<br>
           1 rue des États-Unis d'Amérique, 41100 Vendôme
         </div>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
         <ul>
-          <li><a href="#about">À propos</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#consultations">Consultations</a></li>
-          <li><a href="#consultation">La consultation</a></li>
-          <li><a href="#avis">Témoignages</a></li>
-          <li><a href="#contact">Contact & RDV</a></li>
+          <li><a href="#consultation">The consultation</a></li>
+          <li><a href="#avis">Testimonials</a></li>
+          <li><a href="#contact">Contact & Booking</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -338,18 +337,18 @@ import nourrImg from '../assets/images/nourrisson.jpg';
         <ul>
           <li><a href="tel:0254670326">02 54 67 03 26</a></li>
           <li><a href="#contact">Vendôme 41100</a></li>
-          <li><a href="#contact">Lun–Ven : 8h–19h</a></li>
-          <li><a href="#contact">Sam : 8h–12h</a></li>
+          <li><a href="#contact">Mon–Fri: 8am–7pm</a></li>
+          <li><a href="#contact">Sat: 8am–12pm</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Cécile Arnoux — Ostéopathe D.O. à Vendôme</p>
+      <p>© 2026 Cécile Arnoux — Osteopath D.O. in Vendôme</p>
     </div>
   </footer>
 
   <!-- FLOATING CTA -->
-  <a href="tel:0254670326" class="float-rdv">Appeler pour RDV</a>
+  <a href="tel:0254670326" class="float-rdv">Call to book</a>
 </BaseLayout>
 
 <style>
@@ -375,14 +374,14 @@ import nourrImg from '../assets/images/nourrisson.jpg';
     border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9);
     padding: 8px 18px; border-radius: 50px; font-size: 12px;
     letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
-    margin-bottom: 28px;
+    margin-bottom: 12px;
     opacity: 0; transform: translateY(20px);
     animation: fadeUp 0.8s 0.2s forwards;
   }
   .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--sage-light); border-radius: 50%; }
   .hero-specialty {
     font-size: 13px; color: rgba(255,255,255,0.75); letter-spacing: 0.12em;
-    text-transform: uppercase; font-weight: 400; margin-bottom: 28px; margin-top: -16px;
+    text-transform: uppercase; font-weight: 400; margin-bottom: 28px; margin-top: 0;
     opacity: 0; transform: translateY(20px);
     animation: fadeUp 0.8s 0.35s forwards;
   }
