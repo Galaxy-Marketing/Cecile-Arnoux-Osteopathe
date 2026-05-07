@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cecile-arnoux-osteopathe.vercel.app/sitemap-index.xml
+Sitemap: https://cecile-arnoux.com/sitemap-index.xml

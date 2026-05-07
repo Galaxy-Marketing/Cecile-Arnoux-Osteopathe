@@ -1,4 +1,4 @@
----
+﻿---
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav';
@@ -7,7 +7,7 @@ import FAQ from '../components/FAQ';
 import AvisCarousel from '../components/AvisCarousel';
 
 import heroImg from '../assets/images/hero.jpg';
-import aboutImg from '../assets/images/img2.png';
+import aboutImg from '../assets/images/img2.jpg';
 import soinDosImg from '../assets/images/soin-dos.jpg';
 import sportifImg from '../assets/images/sportif.jpg';
 import soinNourrImg from '../assets/images/soin-nourrisson.jpg';
@@ -22,6 +22,8 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   title="Cécile Arnoux - Ostéopathe à Vendôme"
   description="Cécile Arnoux, ostéopathe D.O. à Vendôme (41100). Consultation sur rendez-vous au cabinet, 1 rue des États-Unis d'Amérique. Appelez le 02 54 67 03 26."
   canonical="https://www.cecile-arnoux.com/"
+  hreflangFr="https://www.cecile-arnoux.com/"
+  hreflangEn="https://www.cecile-arnoux.com/en/"
 >
   <Nav client:load />
 
@@ -63,7 +65,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
       <p class="section-desc">
         Diplômée en ostéopathie et en étiopathie, Cécile Arnoux exerce à Vendôme
         depuis plus de 24 ans avec une approche centrée sur l'écoute et la recherche
-        de la cause réelle de chaque douleur.
+        de la cause primaire de chaque douleur.
       </p>
       <p>
         L'ostéopathie lui permet d'aborder le corps dans sa globalité, en traitant les causes plutôt que les symptômes.
@@ -114,7 +116,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
         </div>
         <div class="soin-body">
           <h3 class="soin-title">Nourrissons & Enfants</h3>
-          <p class="soin-desc">Troubles du sommeil, coliques, torticolis du nourrisson, plagiocéphalie. Une approche ultra-douce et sécurisée dès les premiers jours de vie.</p>
+          <p class="soin-desc">Troubles du sommeil, coliques, torticolis du nourrisson. Une approche ultra-douce et sécurisée dès les premiers jours de vie.</p>
           <span class="soin-tag">Pédiatrie</span>
         </div>
       </div>
@@ -144,7 +146,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
         </div>
         <div class="soin-body">
           <h3 class="soin-title">Troubles digestifs & Viscéraux</h3>
-          <p class="soin-desc">Constipation, ballonnements, reflux (RGO), colopathie fonctionnelle, digestions difficiles. L'ostéopathie et l'étiopathie agissent sur les tensions viscérales et circulatoires.</p>
+          <p class="soin-desc">Constipation, ballonnements, reflux (RGO), colopathie fonctionnelle, digestions difficiles. L'ostéopathie et l'étiopathie agissent sur les troubles viscéraux et circulatoires.</p>
           <span class="soin-tag">Système digestif</span>
         </div>
       </div>
@@ -160,18 +162,18 @@ import nourrImg from '../assets/images/nourrisson.jpg';
     <div class="consult-grid">
       <div class="consult-step reveal">
         <div class="step-num">01</div>
-        <h3 class="step-title">Bilan & écoute</h3>
-        <p class="step-desc">La séance débute par un entretien complet : douleurs, historique médical, habitudes de vie. Cécile prend le temps de comprendre votre situation avant tout geste.</p>
+        <h3 class="step-title">Analyse et recueil d'informations</h3>
+        <p class="step-desc">La séance débute par un recueil d'informations complet : douleurs, antécédents médicaux, habitudes de vie. Une analyse attentive permet de mieux comprendre votre situation avant toute prise en charge.</p>
       </div>
       <div class="consult-step reveal" style="transition-delay:0.15s">
         <div class="step-num">02</div>
         <h3 class="step-title">Traitement manuel</h3>
-        <p class="step-desc">Des techniques manuelles douces et précises, adaptées à chaque patient. L'approche est choisie selon votre corps, votre douleur et votre confort.</p>
+        <p class="step-desc">Des techniques manuelles précises et personnalisées, adaptées à votre corps et à vos besoins spécifiques. L'objectif : soulager vos douleurs tout en respectant votre physiologie.</p>
       </div>
       <div class="consult-step reveal" style="transition-delay:0.3s">
         <div class="step-num">03</div>
         <h3 class="step-title">Conseils personnalisés</h3>
-        <p class="step-desc">En fin de séance, votre ostéopathe transmet des recommandations concrètes : posture, exercices, hygiène de vie, pour prolonger les bénéfices du traitement au quotidien.</p>
+        <p class="step-desc">En fin de séance, Cécile transmet des conseils avisés : posture, exercices, hygiène de vie, pour soutenir durablement votre bien-être.</p>
       </div>
     </div>
     <div class="reveal" style="text-align:center;margin-top:52px">
@@ -200,7 +202,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
     <div class="avis-header">
       <div class="reveal">
         <div class="section-label">Témoignages</div>
-        <h2 class="section-title">Ce que disent<br><em>mes patients</em></h2>
+        <h2 class="section-title">Ce que disent<br><em>les patients</em></h2>
       </div>
       <div class="avis-score reveal">
         <div class="avis-score-text">
@@ -317,7 +319,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
   <footer>
     <div class="footer-grid">
       <div>
-        <div class="footer-brand-name">Cécile Arnoux — Ostéopathe D.O.</div>
+        <div class="footer-brand-name">Cécile Arnoux, Ostéopathe D.O.</div>
         <div class="footer-brand-desc">
           Cabinet d'ostéopathie à Vendôme<br>
           1 rue des États-Unis d'Amérique, 41100 Vendôme
@@ -328,7 +330,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
         <ul>
           <li><a href="#about">À propos</a></li>
           <li><a href="#consultations">Consultations</a></li>
-          <li><a href="#consultation">La consultation</a></li>
+          <li><a href="#consultation">Première visite</a></li>
           <li><a href="#avis">Témoignages</a></li>
           <li><a href="#contact">Contact & RDV</a></li>
         </ul>
@@ -344,12 +346,51 @@ import nourrImg from '../assets/images/nourrisson.jpg';
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Cécile Arnoux — Ostéopathe D.O. à Vendôme</p>
+      <p>© 2026 Cécile Arnoux, Ostéopathe D.O. à Vendôme &nbsp;·&nbsp; <a href="/mentions-legales" style="color:inherit;opacity:0.55;font-size:12px;text-decoration:none;">Mentions légales</a></p>
     </div>
   </footer>
 
   <!-- FLOATING CTA -->
   <a href="tel:0254670326" class="float-rdv">Appeler pour RDV</a>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "L'ostéopathie s'adresse-t-elle à tout le monde ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, de la naissance jusqu'au grand âge. Nourrissons, enfants, sportifs, femmes enceintes et seniors peuvent tous consulter. Cécile adapte son approche à chaque profil et à chaque situation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il une ordonnance pour consulter ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. L'ostéopathie est accessible en accès direct, sans ordonnance médicale. Vous pouvez prendre rendez-vous directement par téléphone. Si vous avez un suivi médical en cours, il est utile d'en informer Cécile lors de la consultation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "L'ostéopathie est-elle remboursée ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le remboursement varie selon votre mutuelle et votre formule. Nous vous invitons à vous renseigner directement auprès de votre organisme pour connaître vos conditions de prise en charge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment se préparer à une première séance ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prévoyez une tenue confortable pour la séance. Si vous avez des radios ou IRM en lien avec votre douleur, pensez à les apporter. Cécile s'occupe du reste."
+        }
+      }
+    ]
+  })} />
 </BaseLayout>
 
 <style>
@@ -541,6 +582,7 @@ import nourrImg from '../assets/images/nourrisson.jpg';
     .contact-grid { grid-template-columns: 1fr; }
     #map-section { height: 260px; }
     .float-rdv { bottom: 14px; right: 14px; left: 14px; justify-content: center; border-radius: 14px; }
+    footer { padding-bottom: 80px; }
     #hero .hero-content { padding: 0 24px; }
     #blog { padding: 60px 24px 110px; }
     #contact { padding: 70px 24px 110px; }

@@ -7,7 +7,7 @@ import FAQ from '../../components/FAQ';
 import AvisCarousel from '../../components/AvisCarousel';
 
 import heroImg from '../../assets/images/hero.jpg';
-import aboutImg from '../../assets/images/img2.png';
+import aboutImg from '../../assets/images/img2.jpg';
 import soinDosImg from '../../assets/images/soin-dos.jpg';
 import sportifImg from '../../assets/images/sportif.jpg';
 import soinNourrImg from '../../assets/images/soin-nourrisson.jpg';
@@ -22,8 +22,11 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
   title="Cécile Arnoux - Osteopath in Vendôme"
   description="Cécile Arnoux, osteopath D.O. in Vendôme (41100). Appointments available at the practice, 1 rue des États-Unis d'Amérique. Call 02 54 67 03 26."
   canonical="https://www.cecile-arnoux.com/en/"
+  lang="en"
+  hreflangFr="https://www.cecile-arnoux.com/"
+  hreflangEn="https://www.cecile-arnoux.com/en/"
 >
-  <Nav client:load lang="en" />
+  <Nav lang="en" client:load />
 
   <!-- HERO -->
   <section id="hero" aria-label="Practice presentation">
@@ -44,13 +47,13 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           02 54 67 03 26
         </a>
-        <a href="#consultations" class="btn-secondary">Discover consultations</a>
+        <a href="#consultations" class="btn-secondary">Discover our consultations</a>
       </div>
     </div>
   </section>
 
   <!-- STATS -->
-  <StatsBar client:load />
+  <StatsBar lang="en" client:load />
 
   <!-- ABOUT -->
   <section id="about">
@@ -93,7 +96,7 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
         </div>
         <div class="soin-body">
           <h3 class="soin-title">Back Pain</h3>
-          <p class="soin-desc">Lower back pain, sciatica, herniated disc, scoliosis… Precise, gentle manipulations to quickly and lastingly relieve your spinal pain.</p>
+          <p class="soin-desc">Lumbar pain, sciatica, disc herniation, scoliosis… Precise and gentle manipulation to relieve your spinal pain quickly and for lasting results.</p>
           <span class="soin-tag">Spine</span>
         </div>
       </div>
@@ -103,7 +106,7 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
         </div>
         <div class="soin-body">
           <h3 class="soin-title">Athletes & Tendinitis</h3>
-          <p class="soin-desc">Tendinitis, sprains, injury prevention, performance optimisation. A tailored follow-up to help you recover and progress.</p>
+          <p class="soin-desc">Tendinitis, sprains, injury prevention, performance optimisation. Tailored support adapted to your sporting demands to help you recover and progress.</p>
           <span class="soin-tag">Sport & Performance</span>
         </div>
       </div>
@@ -404,7 +407,6 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
     opacity: 0; transform: translateY(30px);
     animation: fadeUp 0.9s 0.8s forwards;
   }
-  /* BUTTONS */
   .btn-primary {
     background: var(--sage); color: white;
     padding: 16px 32px; border-radius: 50px; font-size: 15px; font-weight: 500;
@@ -418,7 +420,6 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
   }
   .btn-secondary:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
 
-  /* SECTIONS */
   section { padding: 100px 60px; }
   .bg-cream { background: var(--cream); }
   .bg-white { background: white; }
@@ -427,7 +428,6 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
   .section-title em { font-style: italic; color: var(--sage-dark); }
   .section-desc { font-size: 17px; color: var(--text-mid); line-height: 1.8; max-width: 580px; }
 
-  /* ABOUT */
   #about { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .about-image-wrap { position: relative; }
   .about-image-main { width: 100%; height: 580px; object-fit: cover; border-radius: 4px 60px 4px 60px; display: block; }
@@ -439,7 +439,6 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
   .diplome-dot { width: 8px; height: 8px; background: var(--sage); border-radius: 50%; flex-shrink: 0; }
   .about-signature { margin-top: 32px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: var(--sage-dark); }
 
-  /* SOINS/CONSULTATIONS */
   #consultations { background: var(--warm-white); }
   #consultations .section-title { text-align: center; }
   .soins-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
@@ -453,7 +452,6 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
   .soin-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
   .soin-tag { display: inline-block; margin-top: 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage-dark); background: rgba(122,158,126,0.12); padding: 5px 12px; border-radius: 20px; }
 
-  /* CONSULTATION STEPS */
   .consult-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .consult-step { background: white; border-radius: 18px; padding: 28px 24px; border: 1px solid var(--border); transition: transform 0.35s, box-shadow 0.35s; }
   .consult-step:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.07); }
@@ -461,11 +459,9 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
   .step-title { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--text-dark); margin-bottom: 10px; }
   .step-desc { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
 
-  /* FAQ */
   #faq { background: var(--cream); }
   .faq-blog-hint { font-size: 15px; color: var(--text-light); margin-bottom: 18px; }
 
-  /* AVIS */
   #avis { background: var(--warm-white); overflow: hidden; padding: 0 0 80px; }
   .avis-header { display: flex; justify-content: space-between; align-items: flex-end; padding: 100px 60px 50px; }
   .avis-score { display: flex; flex-direction: column; align-items: flex-end; gap: 0; }
@@ -476,7 +472,6 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
   .half-star-wrap::after { content: '★'; position: absolute; left: 0; top: 0; width: 50%; overflow: hidden; color: #E8B84B; }
   .avis-count { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
 
-  /* BLOG MINI */
   #blog { padding: 80px 40px; }
   .blog-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .blog-mini-card { border: 1px solid var(--border); border-radius: 20px; overflow: hidden; background: var(--cream); text-decoration: none; color: inherit; display: block; transition: box-shadow 0.3s, transform 0.3s; }
@@ -490,7 +485,6 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
   .blog-mini-body p { font-size: 14px; color: var(--text-light); line-height: 1.7; }
   .blog-mini-link { margin-top: 20px; font-size: 13px; font-weight: 600; color: var(--sage-dark); }
 
-  /* CONTACT */
   #contact { padding: 100px 60px; }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 1100px; margin: 0 auto; }
   .contact-info-col { display: flex; flex-direction: column; gap: 20px; }
@@ -509,11 +503,9 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
   .contact-phone-number { font-size: 34px; color: white; font-weight: 700; font-family: 'Playfair Display', serif; line-height: 1.2; }
   .contact-phone-note { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 16px; line-height: 1.6; }
 
-  /* MAP */
   #map-section { padding: 0; height: 380px; }
   #map-section iframe { width: 100%; height: 100%; border: none; display: block; filter: grayscale(20%); }
 
-  /* FLOATING CTA */
   .float-rdv {
     position: fixed; bottom: 30px; right: 30px; z-index: 200;
     background: var(--sage-dark); color: white; padding: 16px 28px;
@@ -524,7 +516,6 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
   .float-rdv:hover { background: var(--sage); transform: scale(1.05); animation: none; }
   .float-rdv:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 
-  /* RESPONSIVE */
   @media (max-width: 900px) {
     section { padding: 70px 24px; }
     #about { grid-template-columns: 1fr; gap: 40px; }
@@ -557,7 +548,6 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
     .avis-header { padding: 52px 20px 36px; }
     #map-section { height: 220px; }
   }
-
   @media (hover: none) {
     .blog-mini-card:hover { box-shadow: none; transform: none; }
     .blog-mini-card:hover .blog-mini-img { transform: none; }

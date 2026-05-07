@@ -1,71 +1,72 @@
 ---
 import { Image } from 'astro:assets';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Nav from '../../components/Nav';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav';
 
-import img1 from '../../assets/images/img1.png';
-import dosImg from '../../assets/images/dos.jpg';
-import nourrImg from '../../assets/images/nourrisson.jpg';
-import grossesseImg from '../../assets/images/grossesse.jpg';
-import sportifImg from '../../assets/images/sportif.jpg';
+import img1 from '../../../assets/images/img1.png';
+import dosImg from '../../../assets/images/dos.jpg';
+import nourrImg from '../../../assets/images/nourrisson.jpg';
+import grossesseImg from '../../../assets/images/grossesse.jpg';
+import sportifImg from '../../../assets/images/sportif.jpg';
 
 const articles = [
   {
-    href: '/blog/osteopathe-vendome/',
+    href: '/en/blog/osteopath-vendome/',
     image: img1,
-    imageAlt: 'Ostéopathe Vendôme',
+    imageAlt: 'Osteopath Vendôme',
     tag: 'Vendôme',
-    title: 'Pourquoi consulter un ostéopathe à Vendôme ?',
-    desc: 'Tout ce que vous devez savoir avant votre première consultation d\'ostéopathie à Vendôme.',
+    title: 'Why see an osteopath in Vendôme?',
+    desc: 'Everything you need to know before your first osteopathy consultation in Vendôme.',
   },
   {
-    href: '/blog/mal-de-dos/',
+    href: '/en/blog/back-pain/',
     image: dosImg,
-    imageAlt: 'Mal de dos ostéopathie',
-    tag: 'Dos & Colonne',
-    title: 'Mal de dos : quand et pourquoi voir un ostéopathe ?',
-    desc: 'Lombalgie, sciatique, douleurs cervicales : ce que l\'ostéopathie peut faire pour votre dos.',
+    imageAlt: 'Back pain osteopathy',
+    tag: 'Back & Spine',
+    title: 'Back pain: when and why see an osteopath?',
+    desc: 'Lumbar pain, sciatica, cervical pain: what osteopathy can do for your back.',
   },
   {
-    href: '/blog/nourrisson/',
+    href: '/en/blog/infant/',
     image: nourrImg,
-    imageAlt: 'Ostéopathie nourrisson',
-    tag: 'Nourrissons',
-    title: 'Ostéopathie pour nourrissons : coliques, torticolis, sommeil',
-    desc: 'Ce que l\'ostéopathie pédiatrique peut apporter à votre bébé et quand consulter.',
+    imageAlt: 'Infant osteopathy',
+    tag: 'Infants',
+    title: 'Infant osteopathy: colic, torticollis, sleep',
+    desc: 'What paediatric osteopathy can do for your baby and when to book an appointment.',
   },
   {
-    href: '/blog/grossesse/',
+    href: '/en/blog/pregnancy/',
     image: grossesseImg,
-    imageAlt: 'Ostéopathie grossesse',
-    tag: 'Grossesse',
-    title: 'Ostéopathie et grossesse : soulager les douleurs en sécurité',
-    desc: 'Douleurs pelviennes, lombaires, troubles du sommeil : comment l\'ostéopathie peut vous accompagner pendant la grossesse.',
+    imageAlt: 'Pregnancy osteopathy',
+    tag: 'Pregnancy',
+    title: 'Osteopathy and pregnancy: safe pain relief',
+    desc: 'Pelvic pain, lumbar pain, sleep disorders: how osteopathy can support you during pregnancy.',
   },
   {
-    href: '/blog/sportif/',
+    href: '/en/blog/sports/',
     image: sportifImg,
-    imageAlt: 'Ostéopathie sportif',
+    imageAlt: 'Sports osteopathy',
     tag: 'Sport',
-    title: 'Ostéopathie et sport : prévenir les blessures et les tendinites',
-    desc: 'Comment l\'ostéopathie aide les sportifs à prévenir les tendinites et à optimiser leur récupération.',
+    title: 'Osteopathy and sport: preventing injuries and tendinitis',
+    desc: 'How osteopathy helps athletes prevent tendinitis and optimise recovery.',
   },
 ];
 ---
 
 <BaseLayout
-  title="Blog Ostéopathie | Cécile Arnoux, Ostéopathe à Vendôme"
-  description="Conseils et informations sur l'ostéopathie par Cécile Arnoux, ostéopathe à Vendôme (41100). Mal de dos, nourrissons, grossesse, sport."
-  canonical="https://www.cecile-arnoux.com/blog/"
+  title="Osteopathy Blog | Cécile Arnoux, Osteopath in Vendôme"
+  description="Advice and information on osteopathy by Cécile Arnoux, osteopath in Vendôme (41100). Back pain, infants, pregnancy, sport."
+  canonical="https://www.cecile-arnoux.com/en/blog/"
+  lang="en"
   hreflangFr="https://www.cecile-arnoux.com/blog/"
   hreflangEn="https://www.cecile-arnoux.com/en/blog/"
 >
-  <Nav activePage="blog" client:load />
+  <Nav lang="en" activePage="blog" client:load />
 
   <div class="page-hero">
-    <div class="label">Conseils & informations</div>
-    <h1>Le blog <em>ostéopathie</em></h1>
-    <p>Des informations claires et honnêtes sur l'ostéopathie, par Cécile Arnoux, ostéopathe D.O. à Vendôme.</p>
+    <div class="label">Advice & information</div>
+    <h1>The osteopathy <em>blog</em></h1>
+    <p>Clear, expert information on osteopathy by Cécile Arnoux, osteopath D.O. in Vendôme.</p>
   </div>
 
   <div class="blog-grid">
@@ -84,8 +85,8 @@ const articles = [
   </div>
 
   <footer class="footer-simple">
-    <div class="footer-brand-name" style="font-size:18px;">Cécile Arnoux, Ostéopathe D.O. à Vendôme</div>
-    <a href="/" class="footer-back">Retour au site</a>
+    <div class="footer-brand-name" style="font-size:18px;">Cécile Arnoux, Ostéopathe D.O. in Vendôme</div>
+    <a href="/en/" class="footer-back">Back to site</a>
   </footer>
 </BaseLayout>
 
@@ -97,9 +98,7 @@ const articles = [
   h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 60px); color: white; line-height: 1.15; }
   h1 em { font-style: italic; color: var(--sage-light); }
   .page-hero p { color: rgba(255,255,255,0.7); font-size: 17px; margin-top: 16px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7; }
-
   .blog-grid { max-width: 1100px; margin: 0 auto; padding: 80px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-
   .blog-card { background: var(--cream); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; text-decoration: none; color: inherit; display: block; }
   .blog-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
   .blog-card-img-wrap { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: #e8ede9; }
@@ -109,7 +108,6 @@ const articles = [
   .blog-card-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage-dark); background: rgba(122,158,126,0.12); padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 12px; }
   .blog-card-title { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--text-dark); line-height: 1.3; margin-bottom: 10px; }
   .blog-card-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 16px; }
-
   @media (max-width: 900px) {
     .page-hero { padding: 120px 24px 60px; }
     .blog-grid { grid-template-columns: 1fr 1fr; padding: 50px 24px; gap: 20px; }
