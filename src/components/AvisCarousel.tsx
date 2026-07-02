@@ -82,7 +82,7 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
       <div className="avis-track-wrap desktop-only">
         <div ref={trackRef} className="avis-track">
           {repeated.map((a, i) => (
-            <div key={i} className="avis-card">
+            <div key={i} className={`avis-card${a.name === 'Lina B.' ? ' avis-card-wide' : ''}`}>
               <Stars n={a.stars} />
               <p className="avis-text">{a.text}</p>
               <div className="avis-name">{a.name}</div>
@@ -131,6 +131,7 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
           border-radius: 16px; padding: 28px;
           width: 420px; flex-shrink: 0;
         }
+        .avis-card-wide { width: 620px; }
         .avis-text {
           font-size: 14px; color: var(--text-mid); line-height: 1.7;
           margin: 12px 0 16px; font-style: normal;
