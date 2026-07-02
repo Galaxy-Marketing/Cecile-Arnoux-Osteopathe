@@ -66,8 +66,9 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
     const track = mobileTrackRef.current;
     if (!track) return;
     const onScroll = () => {
-      const cardWidth = track.clientWidth;
-      const idx = Math.round(track.scrollLeft / (cardWidth + 16));
+      const firstCard = track.querySelector('.mobile-card') as HTMLElement;
+      const cardStep = firstCard ? firstCard.offsetWidth + 16 : track.clientWidth;
+      const idx = Math.round(track.scrollLeft / cardStep);
       setActive(Math.min(Math.max(idx, 0), avis.length - 1));
     };
     track.addEventListener('scroll', onScroll, { passive: true });
@@ -110,7 +111,9 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
               onClick={() => {
                 const track = mobileTrackRef.current;
                 if (track && track.clientWidth > 0) {
-                  track.scrollTo({ left: i * (track.clientWidth + 16), behavior: 'smooth' });
+                  const firstCard = track.querySelector('.mobile-card') as HTMLElement;
+                  const cardStep = firstCard ? firstCard.offsetWidth + 16 : track.clientWidth;
+                  track.scrollTo({ left: i * cardStep, behavior: 'smooth' });
                 }
               }}
               aria-label={`Avis ${i + 1}`}
@@ -120,8 +123,8 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
       </div>
 
       <style>{`
-        .avis-outer { overflow: hidden; }
-        .avis-track-wrap { overflow: hidden; }
+        .avis-outer { overflow-x: hidden; overflow-y: visible; }
+        .avis-track-wrap { overflow-x: hidden; overflow-y: visible; padding-bottom: 8px; }
         .avis-track {
           display: flex; gap: 20px; width: max-content;
           will-change: transform;
