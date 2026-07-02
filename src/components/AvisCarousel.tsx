@@ -141,7 +141,7 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
         .mobile-only { display: none; }
         .avis-mobile-track {
           display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
-          scrollbar-width: none; padding: 0 20px;
+          scrollbar-width: none; padding: 0 20px; align-items: flex-start;
         }
         .avis-mobile-track::-webkit-scrollbar { display: none; }
         .mobile-card {
