@@ -60,20 +60,25 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
     return () => cancelAnimationFrame(raf);
   }, [isMobile]);
 
-  // Mobile: update active dot on scroll
+  // Mobile: update active dot via IntersectionObserver
   useEffect(() => {
-    if (!isMobile) return;
     const track = mobileTrackRef.current;
     if (!track) return;
-    const onScroll = () => {
-      const firstCard = track.querySelector('.mobile-card') as HTMLElement;
-      const cardStep = firstCard ? firstCard.offsetWidth + 16 : track.clientWidth;
-      const idx = Math.round(track.scrollLeft / cardStep);
-      setActive(Math.min(Math.max(idx, 0), avis.length - 1));
-    };
-    track.addEventListener('scroll', onScroll, { passive: true });
-    return () => track.removeEventListener('scroll', onScroll);
-  }, [isMobile]);
+    const cards = Array.from(track.querySelectorAll('.mobile-card'));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            const idx = cards.indexOf(entry.target as HTMLElement);
+            if (idx !== -1) setActive(idx);
+          }
+        });
+      },
+      { root: track, threshold: 0.5 }
+    );
+    cards.forEach(card => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
 
   const repeated = [...avis, ...avis, ...avis, ...avis, ...avis, ...avis];
 
@@ -110,10 +115,10 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
               className={`dot ${active === i ? 'active' : ''}`}
               onClick={() => {
                 const track = mobileTrackRef.current;
-                if (track && track.clientWidth > 0) {
-                  const firstCard = track.querySelector('.mobile-card') as HTMLElement;
-                  const cardStep = firstCard ? firstCard.offsetWidth + 16 : track.clientWidth;
-                  track.scrollTo({ left: i * cardStep, behavior: 'smooth' });
+                if (track) {
+                  const cards = track.querySelectorAll('.mobile-card');
+                  const card = cards[i] as HTMLElement;
+                  if (card) card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
                 }
               }}
               aria-label={`Avis ${i + 1}`}
@@ -150,7 +155,7 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
         .mobile-only { display: none; }
         .avis-mobile-track {
           display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
-          scrollbar-width: none; padding: 0 20px;
+          scrollbar-width: none; padding: 0 20px; scroll-padding-left: 20px;
         }
         .avis-mobile-track::-webkit-scrollbar { display: none; }
         .mobile-card {
