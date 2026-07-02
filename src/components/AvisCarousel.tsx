@@ -95,7 +95,7 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
       <div className="avis-mobile mobile-only">
         <div ref={mobileTrackRef} className="avis-mobile-track">
           {avis.map((a, i) => (
-            <div key={i} className="avis-card mobile-card">
+            <div key={i} className={`avis-card mobile-card${a.name === 'Lina B.' ? ' avis-card-wide' : ''}`}>
               <Stars n={a.stars} />
               <p className="avis-text">{a.text}</p>
               <div className="avis-name">{a.name}</div>
@@ -132,6 +132,12 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
           width: 420px; flex-shrink: 0;
         }
         .avis-card-wide { width: 620px; }
+        @media (max-width: 900px) {
+          .avis-card-wide { width: calc(85vw); }
+          .avis-card-wide .avis-text {
+            display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;
+          }
+        }
         .avis-text {
           font-size: 14px; color: var(--text-mid); line-height: 1.7;
           margin: 12px 0 16px; font-style: normal;
@@ -141,7 +147,7 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
         .mobile-only { display: none; }
         .avis-mobile-track {
           display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
-          scrollbar-width: none; padding: 0 20px; align-items: flex-start;
+          scrollbar-width: none; padding: 0 20px;
         }
         .avis-mobile-track::-webkit-scrollbar { display: none; }
         .mobile-card {
