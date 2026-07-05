@@ -10,10 +10,10 @@ const avisFR = [
 ];
 
 const avisEN = [
-  { name: "Mika D.", stars: 5, text: "Had some digestive issues and decided to give this osteopath a go \u2014 everything's been back to normal since. Thank you so much! \ud83d\ude0a\ud83d\ude0a\ud83d\ude0a" },
+  { name: "Mika D.", stars: 5, text: "Had some digestive issues and decided to give this osteopath a go, and everything's been back to normal since. Thank you so much! \ud83d\ude0a\ud83d\ude0a\ud83d\ude0a" },
   { name: "Marie France L.", stars: 5, text: "Really good osteopath, genuinely listens to her patients. Lovely waiting room, nice relaxing music." },
   { name: "Cyril B.", stars: 5, text: "One session sorted out a back problem I'd been dealing with for over a month. Says it all really." },
-  { name: "Lina B.", stars: 5, text: "I've been coming to see my osteopath since I was little and I can't recommend her enough. Whether it's sprains, muscle pain or anything else, she always manages to help \u2014 with real professionalism and a gentle touch. She takes the time to listen, explain and tailor each session to what you need. You feel at ease straight away. I've always bounced back faster and felt so much better after every visit. Skilled, caring and genuinely attentive \u2014 couldn't recommend her more." },
+  { name: "Lina B.", stars: 5, text: "I've been coming to see my osteopath since I was little and I can't recommend her enough. Whether it's sprains, muscle pain or anything else, she always manages to help, with real professionalism and a gentle touch. She takes the time to listen, explain and tailor each session to what you need. You feel at ease straight away. I've always bounced back faster and felt so much better after every visit. Skilled, caring and genuinely attentive. Couldn't recommend her more." },
   { name: "Alexandra L.", stars: 5, text: "I've been seeing Mme Arnoux for several years now. Great professional, very reassuring and really listens. Highly recommend!" },
   { name: "Sylvie L.", stars: 5, text: "Both my kids and I have been seeing C\u00e9cile for years. She's excellent at what she does. Recommend her every time." },
 ];
