@@ -101,7 +101,7 @@ export default function Nav({ activePage, lang = 'fr' }: NavProps) {
 
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} onClick={close}>
         <div className="mobile-menu-inner" onClick={e => e.stopPropagation()}>
-          <button className="mobile-close" onClick={close} aria-label="Fermer">✕</button>
+          <button className="mobile-close" onClick={close} aria-label={lang === 'en' ? 'Close' : 'Fermer'}>✕</button>
           <ul>
             <li><a href={base + '/#about'} onClick={close}>{t.about}</a></li>
             <li><a href={base + '/#consultations'} onClick={close}>{t.consult}</a></li>

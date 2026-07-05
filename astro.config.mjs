@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   integrations: [react(), sitemap()],
-  site: 'https://cecile-arnoux.com',
+  site: 'https://www.cecile-arnoux.com',
   output: 'static',
   i18n: {
     defaultLocale: 'fr',

@@ -21,10 +21,10 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
 <BaseLayout
   title="Cécile Arnoux - Osteopath in Vendôme"
   description="Cécile Arnoux, osteopath D.O. in Vendôme (41100). Appointments available at the practice, 1 rue des États-Unis d'Amérique. Call 02 54 67 03 26."
-  canonical="https://cecile-arnoux.com/en/"
+  canonical="https://www.cecile-arnoux.com/en/"
   lang="en"
-  hreflangFr="https://cecile-arnoux.com/"
-  hreflangEn="https://cecile-arnoux.com/en/"
+  hreflangFr="https://www.cecile-arnoux.com/"
+  hreflangEn="https://www.cecile-arnoux.com/en/"
 >
   <Nav lang="en" client:load />
 
@@ -65,7 +65,7 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
       <h2 class="section-title">Cécile Arnoux,<br><em>Osteopath D.O.</em></h2>
       <p class="section-desc">
         Cécile Arnoux is an experienced osteopath with more than 24 years of clinical practice
-        in Vendôme, offering an integrative, global, and patient-centered manual therapy approach
+        in Vendôme, offering an integrative, global, and patient-centred manual therapy approach
         focused on personalised care and listening.
       </p>
       <p>
@@ -192,10 +192,10 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
       <div class="section-label">FAQ</div>
       <h2 class="section-title">Questions you <em>may have</em></h2>
     </div>
-    <FAQ client:load />
+    <FAQ client:load lang="en" />
     <div class="reveal" style="text-align:center;margin-top:56px">
       <div class="faq-blog-hint">Want to know more?</div>
-      <a href="/blog/" class="btn-primary">Read all articles</a>
+      <a href="/en/blog/" class="btn-primary">Read all articles</a>
     </div>
   </section>
 
@@ -229,7 +229,7 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
       <h2 class="section-title">Tips & <em>health articles</em></h2>
     </div>
     <div class="blog-grid">
-      <a href="/blog/mal-de-dos/" class="blog-mini-card reveal">
+      <a href="/en/blog/back-pain/" class="blog-mini-card reveal">
         <div class="blog-mini-img-wrap">
           <Image src={dosImg} alt="Back pain osteopathy" width={600} height={400} class="blog-mini-img" loading="lazy" />
         </div>
@@ -240,7 +240,7 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
           <div class="blog-mini-link">Read article →</div>
         </div>
       </a>
-      <a href="/blog/nourrisson/" class="blog-mini-card reveal" style="transition-delay:0.1s">
+      <a href="/en/blog/infant/" class="blog-mini-card reveal" style="transition-delay:0.1s">
         <div class="blog-mini-img-wrap">
           <Image src={nourrImg} alt="Infant osteopathy" width={600} height={400} class="blog-mini-img" loading="lazy" />
         </div>
@@ -251,7 +251,7 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
           <div class="blog-mini-link">Read article →</div>
         </div>
       </a>
-      <a href="/blog/grossesse/" class="blog-mini-card reveal" style="transition-delay:0.2s">
+      <a href="/en/blog/pregnancy/" class="blog-mini-card reveal" style="transition-delay:0.2s">
         <div class="blog-mini-img-wrap">
           <Image src={grossesseImg} alt="Osteopathy pregnancy" width={600} height={400} class="blog-mini-img" loading="lazy" />
         </div>
@@ -264,7 +264,7 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
       </a>
     </div>
     <div class="reveal" style="text-align:center;margin-top:44px">
-      <a href="/blog/" class="btn-primary">View all articles</a>
+      <a href="/en/blog/" class="btn-primary">View all articles</a>
     </div>
   </section>
 
@@ -348,12 +348,51 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Cécile Arnoux, Osteopath D.O. in Vendôme</p>
+      <p>© 2026 Cécile Arnoux, Osteopath D.O. in Vendôme &nbsp;·&nbsp; <a href="/en/legal/" style="color:inherit;opacity:0.55;font-size:12px;text-decoration:none;">Legal Notice</a></p>
     </div>
   </footer>
 
   <!-- FLOATING CTA -->
   <a href="tel:0254670326" class="float-rdv">Book an appointment</a>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is osteopathy suitable for everyone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, from newborns to the elderly. Infants, children, athletes, pregnant women and seniors can all benefit. Cécile adapts her approach to each patient's profile and situation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a referral to see an osteopath?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Osteopathy is available without a medical referral. You can book an appointment directly by phone. If you are already receiving medical treatment, let Cécile know at your consultation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is osteopathy covered by health insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Coverage varies depending on your health fund and level of cover. We recommend checking directly with your insurer for details on your entitlements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I prepare for my first appointment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wear comfortable clothing. If you have any relevant X-rays or MRI scans, bring them along. Cécile will take care of the rest."
+        }
+      }
+    ]
+  })} />
 </BaseLayout>
 
 <style>
@@ -533,6 +572,7 @@ import nourrImg from '../../assets/images/nourrisson.jpg';
     .contact-grid { grid-template-columns: 1fr; }
     #map-section { height: 260px; }
     .float-rdv { bottom: 14px; right: 14px; left: 14px; justify-content: center; border-radius: 14px; }
+    footer { padding-bottom: 80px; }
     #hero .hero-content { padding: 0 24px; }
     #blog { padding: 60px 24px 110px; }
     #contact { padding: 70px 24px 110px; }

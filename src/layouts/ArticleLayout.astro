@@ -74,7 +74,7 @@ const breadcrumbSchema = {
   </article>
 
   <footer class="footer-simple">
-    <div class="footer-brand-name" style="font-size:18px;">Cécile Arnoux, Ostéopathe D.O.</div>
+    <div class="footer-brand-name" style="font-size:18px;">{lang === 'en' ? 'Cécile Arnoux, Osteopath D.O.' : 'Cécile Arnoux, Ostéopathe D.O.'}</div>
     <a href={backHref} class="footer-back">{backLabel}</a>
   </footer>
 </BaseLayout>
@@ -98,9 +98,8 @@ const breadcrumbSchema = {
     font-size: clamp(30px, 4.5vw, 48px); line-height: 1.15;
     color: var(--text-dark); margin-bottom: 20px;
   }
-  .article-img { margin-top: 12px; }
   .article-img {
-    width: 100%; height: auto; border-radius: 16px;
+    margin-top: 12px; width: 100%; height: auto; border-radius: 16px;
     display: block; margin-bottom: 44px;
     aspect-ratio: 2/1; object-fit: cover;
   }

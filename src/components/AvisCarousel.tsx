@@ -121,7 +121,7 @@ export default function AvisCarousel({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
                   if (card) card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
                 }
               }}
-              aria-label={`Avis ${i + 1}`}
+              aria-label={lang === 'en' ? `Review ${i + 1}` : `Avis ${i + 1}`}
             />
           ))}
         </div>
