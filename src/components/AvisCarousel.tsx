@@ -10,12 +10,12 @@ const avisFR = [
 ];
 
 const avisEN = [
-  { name: "Mika D.", stars: 5, text: "After experiencing digestive problems, I visited this osteopath and things have been back to normal since... Thank you so much! \ud83d\ude0a" },
-  { name: "Marie France L.", stars: 5, text: "Excellent osteopath, very attentive to her patients. Relaxing waiting room with soothing music." },
-  { name: "Cyril B.", stars: 5, text: "In my case, just one session resolved a back pain that had been with me for over a month." },
-  { name: "Lina B.", stars: 5, text: "I warmly recommend my osteopath, whom I have been consulting since I was very young. Whether for sprains, muscle pain or other issues, she has always relieved me with great professionalism and gentleness. She takes the time to listen, explain and adapt each session to your needs. You immediately feel at ease. I have often recovered more quickly and felt better after every consultation. A skilled, attentive and caring practitioner I recommend without hesitation." },
-  { name: "Alexandra L.", stars: 5, text: "Mme Arnoux has been following me for several years. A very good professional, reassuring and attentive. I highly recommend her." },
-  { name: "Sylvie L.", stars: 5, text: "For years, my children and I have been cared for by C\u00e9cile. She is an excellent professional. I recommend her regularly." },
+  { name: "Mika D.", stars: 5, text: "Had some digestive issues and decided to give this osteopath a go \u2014 everything's been back to normal since. Thank you so much! \ud83d\ude0a\ud83d\ude0a\ud83d\ude0a" },
+  { name: "Marie France L.", stars: 5, text: "Really good osteopath, genuinely listens to her patients. Lovely waiting room, nice relaxing music." },
+  { name: "Cyril B.", stars: 5, text: "One session sorted out a back problem I'd been dealing with for over a month. Says it all really." },
+  { name: "Lina B.", stars: 5, text: "I've been coming to see my osteopath since I was little and I can't recommend her enough. Whether it's sprains, muscle pain or anything else, she always manages to help \u2014 with real professionalism and a gentle touch. She takes the time to listen, explain and tailor each session to what you need. You feel at ease straight away. I've always bounced back faster and felt so much better after every visit. Skilled, caring and genuinely attentive \u2014 couldn't recommend her more." },
+  { name: "Alexandra L.", stars: 5, text: "I've been seeing Mme Arnoux for several years now. Great professional, very reassuring and really listens. Highly recommend!" },
+  { name: "Sylvie L.", stars: 5, text: "Both my kids and I have been seeing C\u00e9cile for years. She's excellent at what she does. Recommend her every time." },
 ];
 
 function Stars({ n }: { n: number }) {
